@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Pretty | Version Comparison</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #141413;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .highlight {
+            color: #8A8ADF;
+        }
+        .btn-primary {
+            background-color: #8A8ADF;
+            transition: all 0.2s ease;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #7979C9;
+        }
+        .btn-secondary {
+            border: 1px solid #8A8ADF;
+            color: #8A8ADF;
+            transition: all 0.2s ease;
+        }
+        .btn-secondary:hover {
+            background-color: rgba(138, 138, 223, 0.1);
+        }
+        .version-modal {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .version-list {
+            border-right: 1px solid #f0f0f0;
+            max-height: 100%;
+            overflow-y: auto;
+        }
+        .version-item {
+            padding: 12px;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .version-item:hover {
+            background-color: #f9f9f9;
+        }
+        .version-item.active {
+            background-color: rgba(138, 138, 223, 0.15);
+            border-left: 3px solid #8A8ADF;
+            font-weight: 500;
+        }
+        .version-content {
+            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            padding: 1rem;
+            background-color: #FAF9F5;
+        }
+        .version-header {
+            background-color: #F3F4F6;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        .active-indicator {
+            position: absolute;
+            right: -11px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid #8A8ADF;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div class="version-modal">
+        <!-- Modal Header -->
+        <div class="flex justify-between items-center p-4 border-b border-gray-200">
+            <h3 class="text-lg font-medium">Version History</h3>
+            <button id="closeModal" class="text-gray-400 hover:text-gray-600">
+                <i class="fas fa-x"></i>
+            </button>
+        </div>
+        
+        <!-- Modal Content -->
+        <div class="flex flex-1 overflow-hidden">
+            <!-- Version List Sidebar -->
+            <div class="version-list w-1/5 relative">
+                <div class="version-item">
+                    <div class="text-xs text-gray-500 mb-1">Version 3</div>
+                    <div class="text-sm font-medium truncate">Today at 3:45 PM</div>
+                </div>
+                <div class="version-item active relative">
+                    <div class="active-indicator"></div>
+                    <div class="text-xs text-gray-500 mb-1">Version 2</div>
+                    <div class="text-sm font-medium truncate">Yesterday</div>
+                </div>
+                <div class="version-item">
+                    <div class="text-xs text-gray-500 mb-1">Version 1</div>
+                    <div class="text-sm font-medium truncate">Day before yesterday</div>
+                </div>
+                <div class="version-item">
+                    <div class="text-xs text-gray-500 mb-1">Initial Draft</div>
+                    <div class="text-sm font-medium truncate">Apr 10, 2025</div>
+                </div>
+            </div>
+            
+            <!-- Version Comparison Area -->
+            <div class="flex-1 flex flex-col">
+                <div class="flex flex-1 overflow-hidden">
+                    <!-- Selected Version -->
+                    <div class="w-1/2 border-r border-gray-200 flex flex-col">
+                        <div class="version-header flex justify-between items-center bg-blue-50">
+                            <span class="highlight font-medium">Version 2</span>
+                            <span class="text-gray-500 text-xs">Yesterday</span>
+                        </div>
+                        <div class="version-content flex-1">
+# Team Meeting Notes
+
+* Discussed Q2 priorities
+* Review of Q1 performance
+* The dog said hello
+
+## Action Items
+
+1. Sarah to follow up on marketing plans
+2. Michael to share the financial report
+3. Everyone to provide feedback by Friday
+
+> Note: Next meeting scheduled for April 20, 2025.
+
+```
+data = [1, 2, 3, 4]
+sum = 0
+for num in data:
+    sum += num
+print(f"Sum: {sum}")
+```</div>
+                    </div>
+                    
+                    <!-- Current Version -->
+                    <div class="w-1/2 flex flex-col">
+                        <div class="version-header flex justify-between items-center">
+                            <span class="font-medium">Current</span>
+                            <span class="text-gray-500 text-xs">Today</span>
+                        </div>
+                        <div class="version-content flex-1">
+# Team Meeting Notes
+
+* Discussed Q2 priorities
+* Review of Q1 performance
+* The cow said hello
+
+## Action Items
+
+1. Sarah to follow up on marketing plans
+2. Michael to share the financial report
+3. Everyone to provide feedback by Friday
+4. James to schedule follow-up meeting
+
+> Note: Next meeting scheduled for April 20, 2025.
+
+```
+data = [1, 2, 3, 4, 5]
+sum = 0
+for num in data:
+    sum += num
+print(f"Sum: {sum}")
+```</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal Footer -->
+        <div class="p-4 border-t border-gray-200 flex justify-end">
+            <button class="btn-secondary px-4 py-2 rounded-md text-sm mr-3">Copy to Current Version</button>
+            <button class="btn-primary px-4 py-2 rounded-md text-sm text-white">Restore This Version</button>
+        </div>
+    </div>
+
+    <script>
+        // Close modal when clicking the close button
+        document.getElementById('closeModal').addEventListener('click', function() {
+            alert('Modal would close here');
+        });
+
+        // Toggle between version items
+        document.querySelectorAll('.version-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.version-item').forEach(el => {
+                    el.classList.remove('active');
+                    el.querySelector('.active-indicator')?.remove();
+                });
+                this.classList.add('active');
+                
+                // Add indicator arrow
+                if (!this.querySelector('.active-indicator')) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'active-indicator';
+                    this.appendChild(indicator);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

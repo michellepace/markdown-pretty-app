@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Pretty | Document Editor</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #FAF9F5;
+            color: #141413;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        .highlight {
+            color: #8A8ADF;
+        }
+        .btn-primary {
+            background-color: #8A8ADF;
+            transition: all 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #7979C9;
+        }
+        .btn-secondary {
+            border: 1px solid #8A8ADF;
+            color: #8A8ADF;
+            transition: all 0.2s ease;
+        }
+        .btn-secondary:hover {
+            background-color: rgba(138, 138, 223, 0.1);
+        }
+        .editor-container {
+            height: calc(100vh - 120px);
+        }
+        .editor {
+            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+            resize: none;
+            line-height: 1.6;
+            tab-size: 2;
+        }
+        .preview {
+            line-height: 1.6;
+        }
+        .preview h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .preview h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .preview ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .preview li {
+            margin-bottom: 0.25rem;
+        }
+        .preview code {
+            background-color: #f1f1f1;
+            padding: 0.125rem 0.25rem;
+            border-radius: 0.25rem;
+            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+            font-size: 0.875em;
+        }
+        .preview pre {
+            background-color: #f1f1f1;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        .preview pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        .separator {
+            width: 1px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .document-title:hover {
+            background-color: rgba(138, 138, 223, 0.1);
+            border-radius: 0.25rem;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            min-width: 200px;
+            background-color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            z-index: 10;
+        }
+        .dropdown-content a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color: #141413;
+            font-size: 14px;
+        }
+        .dropdown-content a:hover {
+            background-color: rgba(138, 138, 223, 0.1);
+        }
+        .editor-mode {
+            opacity: 0.6;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .editor-mode:hover {
+            opacity: 1;
+        }
+        .editor-mode.active {
+            opacity: 1;
+            color: #8A8ADF;
+            font-weight: 500;
+        }
+        #titleInput {
+            display: none;
+            background-color: transparent;
+            border: 1px solid #8A8ADF;
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            width: 100%;
+            font-weight: 600;
+        }
+        .ai-suggestion {
+            display: none;
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            max-width: 300px;
+            z-index: 20;
+        }
+        .ai-button {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .ai-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px -2px rgba(0, 0, 0, 0.1);
+        }
+        .share-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 50;
+            align-items: center;
+            justify-content: center;
+        }
+        .share-modal-content {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            max-width: 500px;
+            width: 90%;
+        }
+        .mode-toggle {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 0.25rem;
+            overflow: hidden;
+        }
+        .mode-toggle button {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+        .mode-toggle button.active {
+            background-color: #8A8ADF;
+            color: white;
+        }
+        .tooltip {
+            position: relative;
+        }
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 10px;
+            position: absolute;
+            z-index: 100;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex flex-col h-screen">
+        <!-- Navigation -->
+        <header class="bg-white shadow-sm">
+            <div class="container mx-auto px-4 sm:px-6 py-3">
+                <nav class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <a href="#" class="text-xl font-semibold tracking-tight">
+                            <span class="highlight">MD</span><span> Pretty</span>
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-2 sm:space-x-4">
+                        <a href="#" class="btn-secondary px-3 py-1 sm:px-4 sm:py-2 text-sm rounded-md flex items-center">
+                            <i class="fas fa-arrow-left mr-2"></i> Dashboard
+                        </a>
+                        <div class="dropdown ml-2">
+                            <button onclick="toggleDropdown('userMenu')" class="flex items-center focus:outline-none">
+                                <span class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
+                                    <i class="fas fa-user text-gray-500"></i>
+                                </span>
+                            </button>
+                            <div id="userMenu" class="dropdown-content">
+                                <a href="#"><i class="fas fa-user-circle mr-2"></i> Profile</a>
+                                <a href="#"><i class="fas fa-cog mr-2"></i> Settings</a>
+                                <a href="#"><i class="fas fa-sign-out-alt mr-2"></i> Sign out</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Document Title & Actions -->
+        <div class="bg-white border-b border-gray-200">
+            <div class="container mx-auto px-4 sm:px-6 py-3">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-3 sm:space-y-0">
+                    <div class="flex-1 max-w-lg">
+                        <div class="document-title px-2 py-1 inline-block" id="documentTitle" onclick="editTitle()">
+                            <h1 class="text-xl font-semibold">Project Requirements</h1>
+                        </div>
+                        <input type="text" id="titleInput" value="Project Requirements" onblur="saveTitle()" onkeydown="handleTitleKeyDown(event)">
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="tooltip">
+                            <button onclick="toggleShareModal()" class="p-2 rounded-md hover:bg-gray-100">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                            <span class="tooltip-text">Share</span>
+                        </div>
+                        <div class="tooltip">
+                            <label class="flex items-center cursor-pointer p-2 rounded-md hover:bg-gray-100">
+                                <input type="checkbox" class="sr-only" id="syncScrollToggle" checked onchange="toggleSyncScroll()">
+                                <div class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out">
+                                    <div class="absolute left-0.5 top-0.5 bg-white w-4 h-4 rounded-full transition-transform duration-200 ease-in-out" id="syncScrollIndicator"></div>
+                                </div>
+                                <span class="ml-2 text-sm">Sync Scroll</span>
+                            </label>
+                            <span class="tooltip-text">Toggle scroll synchronization</span>
+                        </div>
+                        <button class="btn-primary px-3 py-1 sm:px-4 sm:py-2 text-sm rounded-md text-white font-medium">Save</button>
+                        <div class="dropdown">
+                            <button onclick="toggleDropdown('documentMenu')" class="p-2 rounded-md hover:bg-gray-100">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div id="documentMenu" class="dropdown-content">
+                                <a href="#" onclick="saveVersion(); return false;"><i class="fas fa-save mr-2"></i> Save New Version</a>
+                                <a href="#" onclick="showVersionHistory(); return false;"><i class="fas fa-history mr-2"></i> Version History</a>
+                                <a href="#" class="text-red-500"><i class="fas fa-trash mr-2"></i> Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Editor & Preview -->
+        <div class="flex-1 overflow-hidden">
+            <div class="editor-container flex h-full">
+                <!-- Editor Pane -->
+                <div class="w-1/2 flex flex-col bg-white border-r border-gray-200">
+                    <div class="border-b border-gray-200 p-2 flex justify-between items-center">
+                        <div class="flex items-center">
+                            <span class="editor-mode active px-2 py-1" onclick="focusEditor()">MARKDOWN</span>
+                        </div>
+                    </div>
+                    <textarea id="editor" class="editor flex-1 w-full p-4 focus:outline-none" spellcheck="false"># Hello
+
+* List item one
+* List item two
+
+## Goodbye
+
+This is a simple markdown document. You can **bold** text, create *italic* emphasis, or even `code snippets`.
+
+```javascript
+function helloWorld() {
+  console.log("Hello, world!");
+}
+```
+
+> This is a blockquote. You can use these for important callouts.
+
+1. Ordered lists work too
+2. Just use numbers
+3. And they'll display properly</textarea>
+                </div>
+                
+                <!-- Preview Pane -->
+                <div class="w-1/2 flex flex-col bg-white">
+                    <div class="border-b border-gray-200 p-2 flex justify-between items-center">
+                        <div class="flex items-center">
+                            <span class="editor-mode active px-2 py-1" onclick="focusPreview()">PREVIEW</span>
+                        </div>
+                    </div>
+                    <div id="preview" class="preview flex-1 p-4 overflow-y-auto">
+                        <h1>Hello</h1>
+                        <ul>
+                            <li>List item one</li>
+                            <li>List item two</li>
+                        </ul>
+                        <h2>Goodbye</h2>
+                        <p>This is a simple markdown document. You can <strong>bold</strong> text, create <em>italic</em> emphasis, or even <code>code snippets</code>.</p>
+                        <pre><code class="language-javascript">function helloWorld() {
+  console.log("Hello, world!");
+}</code></pre>
+                        <blockquote>
+                            <p>This is a blockquote. You can use these for important callouts.</p>
+                        </blockquote>
+                        <ol>
+                            <li>Ordered lists work too</li>
+                            <li>Just use numbers</li>
+                            <li>And they'll display properly</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Assistant Button -->
+        <button class="ai-button" onclick="toggleAiSuggestion()">
+            <i class="fas fa-robot highlight"></i>
+        </button>
+
+        <!-- AI Suggestion Panel -->
+        <div class="ai-suggestion" id="aiSuggestion">
+            <div class="flex justify-between items-start mb-2">
+                <h4 class="font-medium">AI Suggestions</h4>
+                <button onclick="toggleAiSuggestion()" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <p class="text-sm text-gray-600 mb-3">What would you like help with?</p>
+            <div class="flex flex-col space-y-2">
+                <button class="text-left text-sm px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-md">Improve clarity</button>
+                <button class="text-left text-sm px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-md">Fix grammar</button>
+                <button class="text-left text-sm px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-md">Suggest structure</button>
+                <button class="text-left text-sm px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-md">Custom prompt...</button>
+            </div>
+        </div>
+
+        <!-- Share Modal -->
+        <div class="share-modal" id="shareModal">
+            <div class="share-modal-content">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-semibold">Share Document</h3>
+                    <button onclick="toggleShareModal()" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="mb-4">
+                    <p class="text-sm text-gray-500 mb-2">Share link</p>
+                    <div class="flex">
+                        <input type="text" value="https://mdpretty.app/d/aBc123XyZ" class="flex-1 border border-gray-300 rounded-l-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500" readonly>
+                        <button class="btn-primary rounded-r-md px-4" onclick="copyShareLink()">Copy</button>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <p class="text-sm text-gray-500 mb-2">Access settings</p>
+                    <div class="mode-toggle flex">
+                        <button class="flex-1 active" onclick="changeShareMode('view')">View only</button>
+                        <button class="flex-1" onclick="changeShareMode('copy')">Allow copy</button>
+                        <button class="flex-1" onclick="changeShareMode('edit')">Allow edit</button>
+                    </div>
+                </div>
+                
+                <button class="btn-primary w-full rounded-md py-2 text-white mt-4">Generate Link</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle dropdown menus
+        function toggleDropdown(menuId) {
+            document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                if (dropdown.id !== menuId) {
+                    dropdown.style.display = 'none';
+                }
+            });
+            
+            const menu = document.getElementById(menuId);
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+
+        // Close dropdowns when clicking elsewhere
+        window.onclick = function(event) {
+            if (!event.target.matches('.fa-ellipsis-v') && 
+                !event.target.matches('.fa-user') && 
+                !event.target.matches('.fa-robot') &&
+                !event.target.closest('#aiSuggestion') &&
+                !event.target.closest('#shareModal')) {
+                
+                document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                    dropdown.style.display = 'none';
+                });
+                
+                const aiSuggestion = document.getElementById('aiSuggestion');
+                if (aiSuggestion.style.display === 'block') {
+                    aiSuggestion.style.display = 'none';
+                }
+            }
+        }
+
+        // Toggle AI suggestion panel
+        function toggleAiSuggestion() {
+            const aiSuggestion = document.getElementById('aiSuggestion');
+            if (aiSuggestion.style.display === 'block') {
+                aiSuggestion.style.display = 'none';
+            } else {
+                aiSuggestion.style.display = 'block';
+            }
+        }
+
+        // Simulate markdown parsing and update preview
+        const editor = document.getElementById('editor');
+        const preview = document.getElementById('preview');
+        
+        editor.addEventListener('input', function() {
+            // In a real implementation, this would parse markdown to HTML
+            // For this prototype, we'll simulate the changes
+            const value = editor.value;
+            
+            // Basic simulation of markdown parsing
+            let html = value
+                .replace(/# (.*$)/gm, '<h1>$1</h1>')
+                .replace(/## (.*$)/gm, '<h2>$1</h2>')
+                .replace(/\*\*(.*)\*\*/gm, '<strong>$1</strong>')
+                .replace(/\*(.*)\*/gm, '<em>$1</em>')
+                .replace(/`([^`]+)`/gm, '<code>$1</code>')
+                .replace(/```(.+?)```/gs, '<pre><code>$1</code></pre>')
+                .replace(/>(.*$)/gm, '<blockquote><p>$1</p></blockquote>');
+            
+            // Handle lists (simplified)
+            const listItems = value.match(/\* (.*$)/gm);
+            if (listItems) {
+                let list = '<ul>';
+                listItems.forEach(item => {
+                    list += `<li>${item.replace('* ', '')}</li>`;
+                });
+                list += '</ul>';
+                html = html.replace(/\* (.*$)/gm, '');
+                html += list;
+            }
+            
+            // Handle ordered lists (simplified)
+            const orderedItems = value.match(/\d+\. (.*$)/gm);
+            if (orderedItems) {
+                let list = '<ol>';
+                orderedItems.forEach(item => {
+                    list += `<li>${item.replace(/\d+\. /, '')}</li>`;
+                });
+                list += '</ol>';
+                html = html.replace(/\d+\. (.*$)/gm, '');
+                html += list;
+            }
+            
+            // Replace newlines with <p> tags (simplified)
+            html = '<p>' + html.replace(/\n\n/g, '</p><p>') + '</p>';
+            html = html.replace(/<p><h1>/g, '<h1>').replace(/<\/h1><\/p>/g, '</h1>');
+            html = html.replace(/<p><h2>/g, '<h2>').replace(/<\/h2><\/p>/g, '</h2>');
+            html = html.replace(/<p><ul>/g, '<ul>').replace(/<\/ul><\/p>/g, '</ul>');
+            html = html.replace(/<p><ol>/g, '<ol>').replace(/<\/ol><\/p>/g, '</ol>');
+            html = html.replace(/<p><blockquote>/g, '<blockquote>').replace(/<\/blockquote><\/p>/g, '</blockquote>');
+            html = html.replace(/<p><pre>/g, '<pre>').replace(/<\/pre><\/p>/g, '</pre>');
+            
+            preview.innerHTML = html;
+            
+            if (syncScroll) {
+                syncScrollPosition();
+            }
+        });
+
+        // Edit document title
+        function editTitle() {
+            const titleElement = document.getElementById('documentTitle');
+            const titleInput = document.getElementById('titleInput');
+            
+            titleElement.style.display = 'none';
+            titleInput.style.display = 'block';
+            titleInput.focus();
+            titleInput.select();
+        }
+
+        // Save document title
+        function saveTitle() {
+            const titleElement = document.getElementById('documentTitle').querySelector('h1');
+            const titleInput = document.getElementById('titleInput');
+            
+            titleElement.textContent = titleInput.value;
+            titleInput.style.display = 'none';
+            document.getElementById('documentTitle').style.display = 'block';
+        }
+
+        // Handle keydown on title input
+        function handleTitleKeyDown(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                saveTitle();
+            } else if (event.key === 'Escape') {
+                event.preventDefault();
+                titleInput.value = document.getElementById('documentTitle').querySelector('h1').textContent;
+                titleInput.style.display = 'none';
+                document.getElementById('documentTitle').style.display = 'block';
+            }
+        }
+
+        // Sync scrolling
+        let syncScroll = true;
+        
+        function toggleSyncScroll() {
+            syncScroll = !syncScroll;
+            const indicator = document.getElementById('syncScrollIndicator');
+            
+            if (syncScroll) {
+                indicator.style.transform = 'translateX(100%)';
+            } else {
+                indicator.style.transform = 'translateX(0)';
+            }
+        }
+
+        function syncScrollPosition() {
+            const editorScrollPercentage = editor.scrollTop / (editor.scrollHeight - editor.clientHeight);
+            preview.scrollTop = editorScrollPercentage * (preview.scrollHeight - preview.clientHeight);
+        }
+
+        // Initialize sync scroll toggle state
+        document.getElementById('syncScrollIndicator').style.transform = 'translateX(100%)';
+
+        // Editor and preview events
+        editor.addEventListener('scroll', function() {
+            if (syncScroll) {
+                syncScrollPosition();
+            }
+        });
+
+        function focusEditor() {
+            editor.focus();
+        }
+
+        function focusPreview() {
+            preview.focus();
+        }
+
+        // Toggle share modal
+        function toggleShareModal() {
+            const shareModal = document.getElementById('shareModal');
+            if (shareModal.style.display === 'flex') {
+                shareModal.style.display = 'none';
+            } else {
+                shareModal.style.display = 'flex';
+            }
+        }
+
+        // Change share mode
+        function changeShareMode(mode) {
+            const buttons = document.querySelectorAll('.mode-toggle button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            event.target.classList.add('active');
+        }
+
+        // Copy share link
+        function copyShareLink() {
+            const shareInput = document.querySelector('.share-modal-content input');
+            shareInput.select();
+            document.execCommand('copy');
+            
+            // Show a brief "Copied!" message
+            const button = document.querySelector('.share-modal-content .btn-primary');
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 1500);
+        }
+
+        // Version history functions (placeholder)
+        function saveVersion() {
+            alert('New version saved!');
+            toggleDropdown('documentMenu');
+        }
+
+        function showVersionHistory() {
+            alert('Version history would be shown here');
+            toggleDropdown('documentMenu');
+        }
+
+        // Initialize by focusing the editor
+        window.onload = function() {
+            editor.focus();
+        }
+    </script>
+</body>
+</html>

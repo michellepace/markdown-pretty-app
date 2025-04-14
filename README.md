@@ -5,6 +5,8 @@ Vibe coding experiment — A responsive markdown editor web app with live previe
 
 ![Handsketch of app overview](https://michellepace.github.io/markdown-pretty-app/images/00-handsketch-START.jpg)
 
+![Github cover image from Hone page wireframe screenshot](https://michellepace.github.io/markdown-pretty-app/images/github-cover.jpg)
+
 ## Development Workflow
 
 ### Step 1: Create Product Specification (`spec.md`)
@@ -69,9 +71,11 @@ Notes:
 2. *A better v0 approach for later — use [v0](https://v0.dev/) to create UI (strongly adheres to Tailwind good practices and also uses [shadcn/ui](https://ui.shadcn.com/) components), then bring that into Bolt or Replit.*
 
 ### Step 5: Create App in Vibe Coding Tool
+---
 To be completed
 
 ### Step 6: Integrate Full Specification
+---
 To be completed
 
 ## General Vibe Notes

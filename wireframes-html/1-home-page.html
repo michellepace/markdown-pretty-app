@@ -10,29 +10,29 @@
           theme: {
             extend: {
               colors: {
-                'bg-michelle': '#FAF9F5',   // Baby powder
-                'primary-michelle': '#8A8ADF', // Tropical indigo #8A8ADF
-                'primary-hover-michelle': '#7979C9', // Tropical indigo (darker)
-                'section-bg-michelle': '#f5f7fa',    // Anti-flash (hard coded below for now)
-                'border-michelle': '#e5e7eb'         // Gray-200 (hard coded below for now)
+                'background': '#FAF9F5',     // Baby powder (was bg-michelle)
+                'primary': '#8A8ADF',        // Tropical indigo (was primary-michelle)
+                'primary-dark': '#7979C9',   // Tropical indigo darker (was primary-hover-michelle)
+                'surface': '#f5f7fa',        // Anti-flash white (was section-bg-michelle)
+                // border-michelle was #e5e7eb which is equivalent to gray-200 in Tailwind
               }
             }
           }
         };
     </script>
 </head>
-<body class="bg-bg-michelle">
+<body class="bg-background">
     <div class="min-h-screen flex flex-col">
         <!-- Navigation -->
         <header class="container mx-auto px-4 sm:px-6 py-4">
             <nav class="flex justify-between items-center">
                 <div class="flex items-center">
                     <a href="#" class="text-lg sm:text-xl font-semibold tracking-tight">
-                        <span class="text-primary-michelle">MD</span><span> Pretty</span>
+                        <span class="text-primary">MD</span><span> Pretty</span>
                     </a>
                 </div>
                 <div>
-                    <a href="#" class="border border-primary-michelle text-primary-michelle px-3 sm:px-4 py-2 rounded-md text-sm font-medium transition duration-200 ease-in-out hover:bg-[rgba(138,138,223,0.1)] hover:-translate-y-px">Sign in</a>
+                    <a href="#" class="border border-primary text-primary px-3 sm:px-4 py-2 rounded-md text-sm font-medium transition duration-200 ease-in-out hover:bg-primary hover:bg-opacity-10 hover:-translate-y-px">Sign in</a>
                 </div>
             </nav>
         </header>
@@ -41,12 +41,12 @@
         <main class="flex-grow container mx-auto px-4 sm:px-6">
             <section class="max-w-3xl mx-auto text-center mt-12 sm:mt-16 md:mt-24 lg:mt-32">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tighter mb-4 sm:mb-6 md:mb-8">
-                    Markdown editing, <span class="text-primary-michelle">beautifully</span> reimagined
+                    Markdown editing, <span class="text-primary">beautifully</span> reimagined
                 </h1>
                 <p class="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-10">
                     A clean, intuitive markdown editor with live preview and AI editing assistance. Create, manage, and share markdown docs, delightfully.
                 </p>
-                <a href="#" class="inline-block bg-primary-michelle text-white px-6 sm:px-8 md:px-9 py-2 sm:py-3 rounded-md font-medium text-base sm:text-lg shadow-md transition duration-200 ease-in-out hover:bg-primary-hover-michelle hover:-translate-y-px">
+                <a href="#" class="inline-block bg-primary text-white px-6 sm:px-8 md:px-9 py-2 sm:py-3 rounded-md font-medium text-base sm:text-lg shadow-md transition duration-200 ease-in-out hover:bg-primary-dark hover:-translate-y-px">
                     See it in action
                 </a>
             </section>
@@ -58,15 +58,15 @@
                 </div>
                 <div class="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2">
                     <!-- Feature 1: Real-time Preview -->
-                    <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 transition-transform transition-shadow duration-300 border-l-2 border-transparent hover:-translate-y-1 hover:shadow-lg hover:border-l-primary-michelle">
+                    <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 transition-transform transition-shadow duration-300 border-l-2 border-transparent hover:-translate-y-1 hover:shadow-lg hover:border-l-primary">
                         <div class="flex items-center mb-4 sm:mb-6">
-                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-section-bg-michelle flex items-center justify-center mr-3 sm:mr-4 text-xl sm:text-2xl text-primary-michelle"></div>
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-surface flex items-center justify-center mr-3 sm:mr-4 text-xl sm:text-2xl text-primary"></div>
                             <h3 class="text-lg sm:text-xl md:text-2xl font-semibold">Real-time Preview</h3>
                         </div>
                         <p class="text-gray-600 mb-4 sm:mb-6">See your markdown rendered instantly as you type</p>
-                        <div class="bg-section-bg-michelle rounded-lg h-32 sm:h-40 flex justify-center items-center overflow-hidden">
+                        <div class="bg-surface rounded-lg h-32 sm:h-40 flex justify-center items-center overflow-hidden">
                             <div class="flex w-full h-full">
-                                <div class="w-1/2 h-full p-2 sm:p-4 flex flex-col justify-center border-r border-border-michelle font-mono text-xs sm:text-sm text-gray-500">
+                                <div class="w-1/2 h-full p-2 sm:p-4 flex flex-col justify-center border-r border-gray-200 font-mono text-xs sm:text-sm text-gray-500">
                                     # Heading<br>
                                     - List item<br>
                                     **Bold text**
@@ -81,40 +81,40 @@
                     </div>
                     
                     <!-- Feature 2: Document Management -->
-                    <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 transition-transform transition-shadow duration-300 border-l-2 border-transparent hover:-translate-y-1 hover:shadow-lg hover:border-l-primary-michelle">
+                    <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 transition-transform transition-shadow duration-300 border-l-2 border-transparent hover:-translate-y-1 hover:shadow-lg hover:border-l-primary">
                         <div class="flex items-center mb-4 sm:mb-6">
-                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-section-bg-michelle flex items-center justify-center mr-3 sm:mr-4 text-xl sm:text-2xl text-primary-michelle"></div>
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-surface flex items-center justify-center mr-3 sm:mr-4 text-xl sm:text-2xl text-primary"></div>
                             <h3 class="text-lg sm:text-xl md:text-2xl font-semibold">Document Management</h3>
                         </div>
                         <p class="text-gray-600 mb-4 sm:mb-6">Organize and access your documents from anywhere</p>
-                        <div class="bg-section-bg-michelle rounded-lg h-32 sm:h-40 flex justify-center items-center overflow-hidden">
+                        <div class="bg-surface rounded-lg h-32 sm:h-40 flex justify-center items-center overflow-hidden">
                             <div class="grid grid-cols-3 gap-2 sm:gap-3 w-4/5">
-                                <div class="bg-white rounded border border-border-michelle h-16 sm:h-20 md:h-24"></div>
-                                <div class="bg-white rounded border border-border-michelle h-16 sm:h-20 md:h-24"></div>
-                                <div class="bg-white rounded border border-border-michelle h-16 sm:h-20 md:h-24"></div>
-                                <div class="bg-white rounded border border-border-michelle h-16 sm:h-20 md:h-24"></div>
-                                <div class="bg-white rounded border border-border-michelle h-16 sm:h-20 md:h-24"></div>
-                                <div class="bg-white rounded border border-border-michelle h-16 sm:h-20 md:h-24"></div>
+                                <div class="bg-white rounded border border-gray-200 h-16 sm:h-20 md:h-24"></div>
+                                <div class="bg-white rounded border border-gray-200 h-16 sm:h-20 md:h-24"></div>
+                                <div class="bg-white rounded border border-gray-200 h-16 sm:h-20 md:h-24"></div>
+                                <div class="bg-white rounded border border-gray-200 h-16 sm:h-20 md:h-24"></div>
+                                <div class="bg-white rounded border border-gray-200 h-16 sm:h-20 md:h-24"></div>
+                                <div class="bg-white rounded border border-gray-200 h-16 sm:h-20 md:h-24"></div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Feature 3: Version Control -->
-                    <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 transition-transform transition-shadow duration-300 border-l-2 border-transparent hover:-translate-y-1 hover:shadow-lg hover:border-l-primary-michelle">
+                    <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 transition-transform transition-shadow duration-300 border-l-2 border-transparent hover:-translate-y-1 hover:shadow-lg hover:border-l-primary">
                         <div class="flex items-center mb-4 sm:mb-6">
-                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-section-bg-michelle flex items-center justify-center mr-3 sm:mr-4 text-xl sm:text-2xl text-primary-michelle"></div>
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-surface flex items-center justify-center mr-3 sm:mr-4 text-xl sm:text-2xl text-primary"></div>
                             <h3 class="text-lg sm:text-xl md:text-2xl font-semibold">Version Control</h3>
                         </div>
                         <p class="text-gray-600 mb-4 sm:mb-6">Track changes and never lose your work</p>
-                        <div class="bg-section-bg-michelle rounded-lg h-32 sm:h-40 flex justify-center items-center overflow-hidden">
-                            <div class="w-4/5 h-0.5 bg-border-michelle relative mt-5">
-                                <div class="absolute w-2 h-2 sm:w-3 sm:h-3 bg-primary-michelle rounded-full -top-1 sm:-top-1.5 left-[10%] flex flex-col items-center">
+                        <div class="bg-surface rounded-lg h-32 sm:h-40 flex justify-center items-center overflow-hidden">
+                            <div class="w-4/5 h-0.5 bg-gray-200 relative mt-5">
+                                <div class="absolute w-2 h-2 sm:w-3 sm:h-3 bg-primary rounded-full -top-1 sm:-top-1.5 left-[10%] flex flex-col items-center">
                                     <span class="absolute top-3 sm:top-4 text-xxs sm:text-xs text-gray-400">v1</span>
                                 </div>
-                                <div class="absolute w-2 h-2 sm:w-3 sm:h-3 bg-primary-michelle rounded-full -top-1 sm:-top-1.5 left-[45%] flex flex-col items-center">
+                                <div class="absolute w-2 h-2 sm:w-3 sm:h-3 bg-primary rounded-full -top-1 sm:-top-1.5 left-[45%] flex flex-col items-center">
                                     <span class="absolute top-3 sm:top-4 text-xxs sm:text-xs text-gray-400">v2</span>
                                 </div>
-                                <div class="absolute w-2 h-2 sm:w-3 sm:h-3 bg-primary-michelle rounded-full -top-1 sm:-top-1.5 left-[80%] flex flex-col items-center">
+                                <div class="absolute w-2 h-2 sm:w-3 sm:h-3 bg-primary rounded-full -top-1 sm:-top-1.5 left-[80%] flex flex-col items-center">
                                     <span class="absolute top-3 sm:top-4 text-xxs sm:text-xs text-gray-400">v3</span>
                                 </div>
                             </div>
@@ -122,16 +122,16 @@
                     </div>
                     
                     <!-- Feature 4: AI Assistance -->
-                    <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 transition-transform transition-shadow duration-300 border-l-2 border-transparent hover:-translate-y-1 hover:shadow-lg hover:border-l-primary-michelle">
+                    <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 transition-transform transition-shadow duration-300 border-l-2 border-transparent hover:-translate-y-1 hover:shadow-lg hover:border-l-primary">
                         <div class="flex items-center mb-4 sm:mb-6">
-                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-section-bg-michelle flex items-center justify-center mr-3 sm:mr-4 text-xl sm:text-2xl text-primary-michelle"></div>
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-surface flex items-center justify-center mr-3 sm:mr-4 text-xl sm:text-2xl text-primary"></div>
                             <h3 class="text-lg sm:text-xl md:text-2xl font-semibold">AI Editing</h3>
                         </div>
                         <p class="text-gray-600 mb-4 sm:mb-6">Enhance your writing with AI suggestions</p>
-                        <div class="bg-section-bg-michelle rounded-lg h-32 sm:h-40 flex justify-center items-center overflow-hidden">
+                        <div class="bg-surface rounded-lg h-32 sm:h-40 flex justify-center items-center overflow-hidden">
                             <div class="flex flex-col w-4/5 gap-2 sm:gap-3">
-                                <div class="bg-white border border-border-michelle rounded p-2 text-xs sm:text-sm text-gray-400">Please re-structure my doc for clarity!</div>
-                                <div class="bg-white border border-border-michelle rounded p-2 text-xs sm:text-sm text-gray-400 h-12 sm:h-16 md:h-20">Thinking...</div>
+                                <div class="bg-white border border-gray-200 rounded p-2 text-xs sm:text-sm text-gray-400">Please re-structure my doc for clarity!</div>
+                                <div class="bg-white border border-gray-200 rounded p-2 text-xs sm:text-sm text-gray-400 h-12 sm:h-16 md:h-20">Thinking...</div>
                             </div>
                         </div>
                     </div>
@@ -140,7 +140,7 @@
         </main>
 
         <!-- Footer -->
-        <footer class="container mx-auto px-4 sm:px-6 py-6 sm:py-8 border-t border-border-michelle">
+        <footer class="container mx-auto px-4 sm:px-6 py-6 sm:py-8 border-t border-gray-200">
             <div class="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
                 <p class="text-sm text-gray-500 text-center sm:text-left">© 2025 MD Pretty. All rights reserved.</p>
                 <div class="text-sm text-gray-500">

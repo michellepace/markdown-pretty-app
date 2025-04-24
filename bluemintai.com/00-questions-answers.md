@@ -107,7 +107,6 @@ It's free.
 No. For planning, use logical discrete and independent steps (without time frames).
 
 # Branding and UI Visuals
----
 
 #### Provide me with your branding details, tag lines, colour theme, or colour palette, and tell me what you want your UI to look like. What brands inspire you? (<= 800)
 

@@ -78,32 +78,145 @@ This example combines realistic data requests with specific Tailwind sizing inst
 
 When prompting AI tools like v0.dev, using professional UIUX terminology can dramatically improve results. Here are 14 powerful words that communicate design intent clearly:
 
+## UIUX Designer Words
+
+---
+
+When prompting AI tools like v0.dev, using professional UIUX terminology can dramatically improve results. Here are 14 powerful words that communicate design intent clearly:
+
 ### Visual Design Principles
 
-1. `Visual hierarchy` - Directs attention flow through deliberate sizing, contrast, and positioning (e.g., "Make the pricing tier cards use a z-20 shadow for the recommended option and z-10 for others to establish clearer visual hierarchy")
-2. `Content hierarchy` - Information importance signaling (e.g., "Create clear content hierarchy with text-2xl font-semibold for primary headings, text-lg font-medium for subheadings, and text-sm text-gray-600 for supporting text")
-3. `Negative space` - Strategic whitespace that improves focus and readability (e.g., "Add p-6 negative space around cards and increase to p-8 for the featured card")
-4. `Card elevation` - Visual prominence through shadows and positioning (e.g., "Use three levels of card elevation: shadow-sm for inactive items, shadow-md for standard cards, and shadow-lg with a -translate-y-1 for featured elements")
-5. `Gestalt principles` - Visual perception laws for unified design (e.g., "Apply the Gestalt principle of proximity by grouping related actions within a space-y-1 container and separating sections with a my-6 divider")
-6. `Skeuomorphism vs. flat design` - Interface styling approach (e.g., "Add subtle skeuomorphic effects with shadow-md and a 1px border-slate-200 on cards while maintaining the overall flat design aesthetic")
+**1)Visual hierarchy**
+
+Directs attention flow through deliberate sizing, contrast, and positioning
+
+1. *Establish a clearer visual hierarchy with the pricing tiers*
+2. *Make the pricing tier cards use a z-20 shadow for the recommended option and z-10 for others to establish clearer visual hierarchy*
+
+> Provides specific Tailwind classes (z-index values and shadow) that v0.dev can directly implement rather than an abstract request.
+
+**2) Content hierarchy**
+
+Information importance signaling
+
+1. *Not in original artifact*
+2. *Create clear content hierarchy with text-2xl font-semibold for primary headings, text-lg font-medium for subheadings, and text-sm text-gray-600 for supporting text*
+
+> Provides exact typography classes for different content levels instead of vague hierarchy requests.
+
+**3) Negative space**
+
+Strategic whitespace that improves focus and readability
+
+1. *Increase negative space around card elements*
+2. *Add p-6 negative space around cards and increase to p-8 for the featured card*
+
+> The revised example uses specific Tailwind padding units that v0.dev can immediately apply instead of the vague "increase" instruction.
+
+**4) Card elevation**
+
+Visual prominence through shadows and positioning
+
+1. *Not in original artifact*
+2. *Use three levels of card elevation: shadow-sm for inactive items, shadow-md for standard cards, and shadow-lg with a -translate-y-1 for featured elements*
+
+> Establishes a complete system of elevation using specific shadow utilities and transform classes.
+
+**5) Gestalt principles**
+
+Visual perception laws for unified design
+
+1. *Not in original artifact*
+2. *Apply the Gestalt principle of proximity by grouping related actions within a space-y-1 container and separating sections with a my-6 divider*
+
+> Translates abstract design theory into concrete Tailwind spacing classes.
+
+**6) Skeuomorphism vs. flat design**
+
+Interface styling approach
+
+1. *Add subtle skeuomorphic elements to the flat design*
+2. *Add subtle skeuomorphic effects with shadow-md and a 1px border-slate-200 on cards while maintaining the overall flat design aesthetic*
+
+> The improved description provides implementation-ready Tailwind classes rather than leaving interpretation to the AI.
 
 ### Accessibility & Usability
 
-7. `Accessibility contrast` - WCAG compliance for text visibility (e.g., "Use text-slate-900 on white backgrounds to ensure AAA accessibility contrast ratio of at least 7:1 for all body text")
-8. `Affordance` - Visual cues indicating interactivity (e.g., "Increase button affordance with hover:scale-105 transition effects and an interactive shadow-sm hover:shadow-md")
-9. `Interaction parity` - Consistent behavior across devices (e.g., "Ensure interaction parity by making hover:bg-slate-100 states have equivalent focus-visible:bg-slate-100 and active:bg-slate-200 states for keyboard/touch users")
+**7) Accessibility contrast**
+
+WCAG compliance for text visibility
+
+1. *Ensure AAA accessibility contrast for all text elements*
+2. *Use text-slate-900 on white backgrounds to ensure AAA accessibility contrast ratio of at least 7:1 for all body text*
+
+> The enhanced example specifies exact color values and the required contrast ratio, giving v0.dev concrete parameters to work with.
+
+**8) Affordance**
+
+Visual cues indicating interactivity
+
+1. *Make the button have stronger affordance*
+2. *Increase button affordance with hover:scale-105 transition effects and an interactive shadow-sm hover:shadow-md*
+
+> The revised instruction includes specific Tailwind transition and shadow classes that create clear visual affordances.
+
+**9) Interaction parity**
+
+Consistent behaviour across devices
+
+1. *Not in original artifact*
+2. *Ensure interaction parity by making hover:bg-slate-100 states have equivalent focus-visible:bg-slate-100 and active:bg-slate-200 states for keyboard/touch users*
+
+> Provides specific class pairings that ensure consistent behaviour across different input methods.
 
 ### Information & Interaction Design
 
-10. `Information architecture` - Structured content organization (e.g., "Improve the dashboard's information architecture by using a grid-cols-12 layout with col-span-8 for primary content and col-span-4 for secondary information")
-11. `Progressive disclosure` - Revealing information gradually (e.g., "Implement progressive disclosure for advanced settings using a Disclosure component from shadcn with a chevron animation on toggle")
-12. `Micro interactions` - State-based animations providing feedback (e.g., "Add micro interactions using group-hover:translate-x-1 transition-all duration-200 to the chevron icon in the dropdown menu")
+**10) Information architecture**
+
+Structured content organization
+
+1. *Improve the information architecture of the dashboard*
+2. *Improve the dashboard's information architecture by using a grid-cols-12 layout with col-span-8 for primary content and col-span-4 for secondary information*
+
+> The improved description provides a specific grid system implementation rather than a vague improvement request.
+
+**11) Progressive disclosure**
+
+Revealing information gradually
+
+1. *Use progressive disclosure for the complex settings*
+2. *Implement progressive disclosure for advanced settings using a Disclosure component from shadcn with a chevron animation on toggle*
+
+> The revised version references a specific shadcn component and animation detail that v0.dev can implement directly.
+
+**12) Micro interactions**
+
+State-based animations providing feedback
+
+1. *Add micro interactions to form submissions*
+2. *Add micro interactions using group-hover:translate-x-1 transition-all duration-200 to the chevron icon in the dropdown menu*
+
+> The new example details exact animation classes, timing parameters, and a specific element to animate.
 
 ### Cognitive UX Principles
 
-13. `Cognitive load` - Mental effort required for interface use (e.g., "Reduce cognitive load in checkout by limiting form fields to max 4 per step and using shadcn/Form with built-in validation")
-14. `Decision fatigue` - Limited user decision capacity (e.g., "Combat decision fatigue by using a bg-primary highlight for the recommended plan and limiting feature comparison to only 5 key differences")
+**13) Cognitive load**
 
+Mental effort required for interface use
+
+1. *Reduce cognitive load in the checkout process*
+2. *Reduce cognitive load in checkout by limiting form fields to max 4 per step and using shadcn/Form with built-in validation*
+
+> The enhanced example provides quantitative limits and specifies component choices rather than just requesting a general reduction.
+
+**14) Decision fatigue**
+
+Limited user decision capacity
+
+1. *Minimize decision fatigue in the onboarding flow*
+2. *Combat decision fatigue by using a bg-primary highlight for the recommended plan and limiting feature comparison to only 5 key differences*
+
+> The improved version specifies styling approaches and numerical constraints that create immediately actionable instructions for v0.dev.
 ## Tailwind Words
 
 ---
@@ -112,26 +225,135 @@ Leveraging Tailwind-specific terminology in your prompts signals technical knowl
 
 ### Core Tailwind Concepts
 
-1. `Utility-first` - Core Tailwind approach using atomic classes (e.g., "Create a utility-first navbar with flex justify-between items-center py-4 px-6 bg-white shadow-sm")
-2. `JIT compiler` - Just-in-time dynamic class generation (e.g., "Leverage dynamic classes enabled by the JIT compiler like hover:translate-y-[2px] and bg-[#3b82f680]")
-3. `Arbitrary values` - Custom non-standard measurements (e.g., "Apply precise spacing with arbitrary values like pt-[72px] w-[37.5rem] and grid-cols-[1fr_2.5fr_1fr]")
-4. `Custom colour palette` - Extended theme colors (e.g., "Apply our brand palette using custom colors text-brand-900 bg-brand-100 border-brand-300 where brand-900 is #0f172a")
+**1) Utility-first**
+
+Core Tailwind approach using single-purpose atomic classes instead of component classes
+
+1. *Create a utility-first navbar design*
+2. *Create a utility-first navbar with flex justify-between items-center py-4 px-6 bg-white shadow-sm*
+
+> The revised example demonstrates actual utility classes working together rather than just mentioning the concept abstractly.
+
+**2) JIT compiler**
+
+Just-in-time dynamic class generation that enables arbitrary values and variants
+
+1. *Leverage JIT compiler features for the animation effects*
+2. *Leverage dynamic classes enabled by the JIT compiler like hover:translate-y-[2px] and bg-[#3b82f680]*
+
+> The improved version shows specific arbitrary values that JIT enables rather than vague "animation effects."
+
+**3) Arbitrary values**
+
+Custom non-standard measurements using square bracket notation for precision
+
+1. *Use arbitrary values [w-42rem] for the hero section*
+2. *Apply precise spacing with arbitrary values like pt-[72px] w-[37.5rem] and grid-cols-[1fr_2.5fr_1fr]*
+
+> The enhanced example demonstrates various formats of arbitrary values and how they can be used together.
+
+**4) Custom colour palette**
+
+Extended theme colors beyond default Tailwind palette for brand consistency
+
+1. *Use slate-800 for text and emerald-500 for accents*
+2. *Apply our brand palette using custom colors text-brand-900 bg-brand-100 border-brand-300 where brand-900 is #0f172a*
+
+> The improved version demonstrates how to reference custom color definitions rather than just using standard Tailwind colors.
 
 ### Layout & Responsiveness
 
-5. `Responsive variants` - Breakpoint-specific styling (e.g., "Use responsive variants: flex-col items-start gap-4 on mobile, sm:flex-row sm:items-center sm:gap-6 on tablet, and md:justify-between on desktop")
-6. `Container queries` - Component-specific responsive styling (e.g., "@container queries for a product card that's w-full @container(min-width: 300px):grid @container(min-width: 400px):grid-cols-2")
-7. `Space-between` - Flexbox distribution (e.g., "Use flex justify-between items-center for the header with mr-auto on the logo and gap-4 between navigation items")
-8. `Responsive typography` - Screen-adaptive text sizing (e.g., "Use text-xl lg:text-2xl xl:text-4xl font-bold for the hero heading and text-sm md:text-base text-gray-600 for the description")
-9. `Spacing scale consistency` - Harmonious proportional spacing (e.g., "Maintain spacing consistency using p-4 gap-2 for small components, p-6 gap-4 for medium components, and p-8 gap-6 for large components")
+**5) Responsive variants**
+
+Breakpoint-specific styling with sm:, md:, lg: and xl: prefixes
+
+1. *Use responsive variants for the sidebar: hidden on mobile, visible on md:*
+2. *Use responsive variants: flex-col items-start gap-4 on mobile, sm:flex-row sm:items-center sm:gap-6 on tablet, and md:justify-between on desktop*
+
+> The enhanced example provides complete responsive patterns across multiple breakpoints with specific class combinations.
+
+**6) Container queries**
+
+Component-specific responsive styling based on parent container width not viewport
+
+1. *Implement container queries for the product cards*
+2. *@container queries for a product card that's w-full @container(min-width: 300px):grid @container(min-width: 400px):grid-cols-2*
+
+> The improved description shows the exact syntax for container queries rather than just the concept.
+
+**7) Space-between**
+
+Flexbox distribution utility for spreading elements within a container
+
+1. *Use space-between for the navigation items*
+2. *Use flex justify-between items-center for the header with mr-auto on the logo and gap-4 between navigation items*
+
+> The revised version provides a complete flexbox implementation pattern rather than a single property in isolation.
+
+**8) Responsive typography**
+
+Screen-adaptive text sizing that changes at different breakpoints
+
+1. *Not in original artifact*
+2. *Use text-xl lg:text-2xl xl:text-4xl font-bold for the hero heading and text-sm md:text-base text-gray-600 for the description*
+
+> Provides specific typography classes at different breakpoints rather than general responsive guidance.
+
+**9) Spacing scale consistency**
+
+Harmonious proportional spacing using Tailwind's built-in spacing scale
+
+1. *Not in original artifact*
+2. *Maintain spacing consistency using p-4 gap-2 for small components, p-6 gap-4 for medium components, and p-8 gap-6 for large components*
+
+> Establishes a systematic approach to spacing with specific value relationships rather than arbitrary spacing.
 
 ### Interactive States
 
-10. `Dark mode` - Light/dark theming (e.g., "Implement dark mode with bg-white dark:bg-slate-900 text-slate-900 dark:text-white and transition-colors duration-200")
-11. `Group-hover` - Parent-trigger state changes (e.g., "Create card with group hover effects: group hover:bg-slate-50 applied to the card and invisible group-hover:visible group-hover:opacity-100 on child buttons")
-12. `Ring utilities` - Focus state visualization (e.g., "Add accessible focus states with ring-2 ring-offset-2 ring-blue-500 focus:outline-none focus-visible:ring on interactive elements")
-13. `Multi-variant states` - Combined interactive states (e.g., "Apply hover:bg-blue-600 active:bg-blue-700 focus:ring-2 disabled:opacity-50 disabled:bg-gray-300 disabled:cursor-not-allowed to the submit button")
-14. `Pseudo-element styling` - Using before/after elements (e.g., "Add decorative elements with before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-gradient-to-r before:from-blue-500 before:to-purple-500")
+**10) Dark mode**
+
+Light/dark theming using the dark: variant prefix for theme toggling
+
+1. *Implement dark mode toggle with appropriate colour shifts*
+2. *Implement dark mode with bg-white dark:bg-slate-900 text-slate-900 dark:text-white and transition-colors duration-200*
+
+> The revised example includes transition effects and complete paired class sets for a seamless theme switch.
+
+**11) Group-hover**
+
+Parent-trigger state changes using the group and group-hover: modifiers
+
+1. *Apply group-hover effects to the card's action buttons*
+2. *Create card with group hover effects: group hover:bg-slate-50 applied to the card and invisible group-hover:visible group-hover:opacity-100 on child buttons*
+
+> The enhanced version shows a complete parent-child relationship pattern with visibility controls rather than just mentioning effects.
+
+**12) Ring utilities**
+
+Focus state visualization using Tailwind's ring-width and ring-color utilities
+
+1. *Add ring utilities for interactive elements*
+2. *Add accessible focus states with ring-2 ring-offset-2 ring-blue-500 focus:outline-none focus-visible:ring on interactive elements*
+
+> The improved example provides a complete accessible focus pattern with proper offsets rather than just mentioning rings generically.
+
+**13) Multi-variant states**
+
+Combined interactive states using hover:, active:, focus: and disabled: prefixes
+
+1. *Not in original artifact*
+2. *Apply hover:bg-blue-600 active:bg-blue-700 focus:ring-2 disabled:opacity-50 disabled:bg-gray-300 disabled:cursor-not-allowed to the submit button*
+
+> Demonstrates how to handle multiple state variants together rather than addressing each state separately.
+
+**14) Pseudo-element styling**
+
+Using before: and after: variants to create decorative elements without extra markup
+
+1. *Not in original artifact*
+2. *Add decorative elements with before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-gradient-to-r before:from-blue-500 before:to-purple-500*
+
+> Provides complete pseudo-element styling pattern with positioning and gradient rather than basic decoration.
 
 ## Shadcn Words
 
@@ -141,32 +363,139 @@ For interfaces using shadcn components, these 14 terms communicate component imp
 
 ### Core Component Architecture
 
-1. `Radix primitives` - Accessibility-first unstyled components that shadcn builds upon (e.g., "Implement a Select component using Radix primitives with proper aria-label attributes and keyboard navigation support with a max-h-[300px] scrollable dropdown")
-2. `Compound components` - Related component pieces that share state (e.g., "Create a Form compound component with FormField, FormItem, FormLabel, FormControl, FormDescription, and FormMessage subcomponents that handle validation state together")
-3. `Polymorphic components` - Components that can render as different HTML elements (e.g., "Make the Button component polymorphic using the asChild prop so it can wrap a NextLink component while maintaining all button styling")
+**1) Radix primitives**
+
+Accessibility-first unstyled components that shadcn builds upon.
+
+1. *build upon Radix primitives for maximum compatibility*
+2. *Implement a Select component using Radix primitives with proper aria-label attributes and keyboard navigation support with a max-h-[300px] scrollable dropdown*
+
+> The revised example provides specific implementation details including accessibility attributes, interaction patterns, and sizing constraints.
+
+**2) Compound components**
+
+Related component pieces that share state.
+
+1. *use compound components for the date picker*
+2. *Create a Form compound component with FormField, FormItem, FormLabel, FormControl, FormDescription, and FormMessage subcomponents that handle validation state together*
+
+> The improved version names all required subcomponents and explains their shared state management purpose.
+
+**3) Polymorphic components**
+
+Components that can render as different HTML elements.
+
+1. *make the button a polymorphic component*
+2. *Make the Button component polymorphic using the asChild prop so it can wrap a NextLink component while maintaining all button styling*
+
+> The enhanced example specifies the exact prop to use and provides a concrete use case scenario.
 
 ### Navigation & Command Interfaces
 
-4. `Command palette` - Keyboard-accessible search interface (e.g., "Add a Command palette with cmdk integration that filters through page sections and supports both keyboard shortcuts (⌘K) and click activation")
-5. `Drawer navigation` - Side-sliding panel UI pattern (e.g., "Create a Drawer navigation using shadcn that slides from the left on small screens with a backdrop blur-sm effect and preserves scroll position when closed") 
-6. `Sheet component` - Side panel with various anchor positions (e.g., "Create a Sheet component that slides in from the right side with size='sm' on mobile and 'default' on desktop, containing user notification preferences")
+**4) Command palette**
+
+Keyboard-accessible search interface.
+
+1. *add a command palette for quick actions*
+2. *Add a Command palette with cmdk integration that filters through page sections and supports both keyboard shortcuts (⌘K) and click activation*
+
+> The improved version details specific integration technology, filtering capabilities, and multiple activation methods.
+
+**5) Drawer navigation**
+
+Side-sliding panel UI pattern.
+
+1. *add drawer navigation for mobile users*
+2. *Create a Drawer navigation using shadcn that slides from the left on small screens with a backdrop blur-sm effect and preserves scroll position when closed*
+
+> The enhanced example specifies animation direction, backdrop styling, and state preservation behavior.
+
+**6) Sheet component**
+
+Side panel with various anchor positions.
+
+1. *add drawer navigation for mobile users*
+2. *Create a Sheet component that slides in from the right side with size='sm' on mobile and 'default' on desktop, containing user notification preferences*
+
+> The revised description details responsive sizing variations, positioning, and content purpose.
 
 ### Content Organization Components
 
-7. `Accordion pattern` - Expandable content sections (e.g., "Use an Accordion with collapsible={false} type='single' to ensure one section always remains open, and customize the ChevronDown icon animation duration to 150ms")
-8. `Collapsible sections` - Toggle visibility content areas (e.g., "Build FAQ items using Collapsible components with a custom CollapseButton that includes both a plus/minus icon transition and text color change on expanded state")
-9. `Tabs with content` - Organized sectioned interface (e.g., "Build a TabsList with defaultValue='overview' and three Tab panels using underlined variant that dynamically swaps content without page reload")
+**7) Accordion pattern**
+
+Expandable content sections.
+
+1. *organize content in an accordion pattern*
+2. *Use an Accordion with collapsible={false} type='single' to ensure one section always remains open, and customize the ChevronDown icon animation duration to 150ms*
+
+> The improved version specifies configuration props, behavior constraints, and animation customization details.
+
+**8) Collapsible sections**
+
+Toggle visibility content areas.
+
+1. *implement collapsible sections for the FAQ items*
+2. *Build FAQ items using Collapsible components with a custom CollapseButton that includes both a plus/minus icon transition and text color change on expanded state*
+
+> The enhanced example details custom button creation and multiple visual state indicators.
+
+**9) Tabs with content**
+
+Organized sectioned interface.
+
+1. *organize content in an accordion pattern*
+2. *Build a TabsList with defaultValue='overview' and three Tab panels using underlined variant that dynamically swaps content without page reload*
+
+> The revised description provides initialization details, quantifies content sections, specifies styling variant, and explains interaction behavior.
 
 ### Interactive Overlay Components
 
-10. `Context menu` - Right-click action interface (e.g., "Implement a Context menu with submenus for file actions that includes icons from lucide-react and keyboard shortcuts displayed right-aligned in text-muted-foreground")
-11. `Dialogue modals` - Focus-trapping overlay components (e.g., "Use a Dialogue modal with a 3-step onboarding flow that uses Dialogue.Title with text-2xl and Dialogue.Description with text-muted, ensuring each step has a clear primary action button")
-12. `Toast notifications` - Temporary feedback messages (e.g., "Show Toast notifications using useToast() hook with variant='destructive' for errors and duration={3000} for success messages, positioned in the bottom-right corner")
-13. `Hover Card` - Rich preview popover for elements (e.g., "Add HoverCard components to user avatars showing detailed profile info with a 300ms openDelay and a subtle shadow-md border rounded-xl")
+**10) Context menu**
+
+Right-click action interface.
+
+1. *implement a context menu for additional options*
+2. *Implement a Context menu with submenus for file actions that includes icons from lucide-react and keyboard shortcuts displayed right-aligned in text-muted-foreground*
+
+> The improved version specifies nested menu structure, icon integration, keyboard support, and text styling.
+
+**11) Dialogue modals**
+
+Focus-trapping overlay components.
+
+1. *use a dialogue modal for the confirmation step*
+2. *Use a Dialogue modal with a 3-step onboarding flow that uses Dialogue.Title with text-2xl and Dialogue.Description with text-muted, ensuring each step has a clear primary action button*
+
+> The enhanced example details a multi-step implementation with specific typography styling and action button requirements.
+
+**12) Toast notifications**
+
+Temporary feedback messages.
+
+1. *show toast notifications for form submissions*
+2. *Show Toast notifications using useToast() hook with variant='destructive' for errors and duration={3000} for success messages, positioned in the bottom-right corner*
+
+> The revised description specifies the hook implementation, multiple variants for different states, timing configuration, and positioning.
+
+**13) Hover Card**
+
+Rich preview popover for elements.
+
+1. *show toast notifications for form submissions*
+2. *Add HoverCard components to user avatars showing detailed profile info with a 300ms openDelay and a subtle shadow-md border rounded-xl*
+
+> The improved version details timing configuration, visual styling, and specific implementation use case.
 
 ### Advanced Selection Components
 
-14. `Combobox with filtering` - Searchable dropdown selection (e.g., "Implement a Combobox component that filters countries as you type with support for keyboard navigation and custom rendering of flag icons next to each option")
+**14) Combobox with filtering**
+
+Searchable dropdown selection.
+
+1. *implement a context menu for additional options*
+2. *Implement a Combobox component that filters countries as you type with support for keyboard navigation and custom rendering of flag icons next to each option*
+
+> The enhanced example specifies dynamic filtering behavior, accessibility support, and custom content rendering capabilities.
 
 ## More Prompt Examples
 

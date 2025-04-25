@@ -76,35 +76,55 @@ This example combines realistic data requests with specific Tailwind sizing inst
 
 ---
 
-When prompting AI tools like v0.dev, using professional UIUX terminology can dramatically improve results. Here are 10 powerful words that communicate design intent clearly:
+When prompting AI tools like v0.dev, using professional UIUX terminology can dramatically improve results. Here are 14 powerful words that communicate design intent clearly:
 
-1. `Visual hierarchy` - Directs attention flow and importance (e.g., "establish a clearer visual hierarchy with the pricing tiers")
-2. `Negative space` - Strategic emptiness that improves composition (e.g., "increase negative space around card elements")
-3. `Skeuomorphism vs. flat design` - Design philosophy spectrum (e.g., "add subtle skeuomorphic elements to the flat design")
-4. `Accessibility contrast` - WCAG compliant visibility (e.g., "ensure AAA accessibility contrast for all text elements")
-5. `Affordance` - Indicates how obvious an element's function should be (e.g., "make the button have stronger affordance")
-6. `Micro interactions` - Small animations that provide feedback (e.g., "add micro interactions to form submissions")
-7. `Information architecture` - Organization structure of content (e.g., "improve the information architecture of the dashboard")
-8. `Progressive disclosure` - Revealing information gradually (e.g., "use progressive disclosure for the complex settings")
-9. `Cognitive load` - Mental effort required to use an interface (e.g., "reduce cognitive load in the checkout process")
-10. `Decision fatigue` - Limited user decision-making capacity (e.g., "minimize decision fatigue in the onboarding flow")
+// Visual Design Principles
+1. `Visual hierarchy` - Directs attention flow through deliberate sizing, contrast, and positioning (e.g., "Make the pricing tier cards use a z-20 shadow for the recommended option and z-10 for others to establish clearer visual hierarchy")
+2. `Content hierarchy` - Information importance signaling (e.g., "Create clear content hierarchy with text-2xl font-semibold for primary headings, text-lg font-medium for subheadings, and text-sm text-gray-600 for supporting text")
+3. `Negative space` - Strategic whitespace that improves focus and readability (e.g., "Add p-6 negative space around cards and increase to p-8 for the featured card")
+4. `Card elevation` - Visual prominence through shadows and positioning (e.g., "Use three levels of card elevation: shadow-sm for inactive items, shadow-md for standard cards, and shadow-lg with a -translate-y-1 for featured elements")
+5. `Gestalt principles` - Visual perception laws for unified design (e.g., "Apply the Gestalt principle of proximity by grouping related actions within a space-y-1 container and separating sections with a my-6 divider")
+6. `Skeuomorphism vs. flat design` - Interface styling approach (e.g., "Add subtle skeuomorphic effects with shadow-md and a 1px border-slate-200 on cards while maintaining the overall flat design aesthetic")
+
+// Accessibility & Usability
+7. `Accessibility contrast` - WCAG compliance for text visibility (e.g., "Use text-slate-900 on white backgrounds to ensure AAA accessibility contrast ratio of at least 7:1 for all body text")
+8. `Affordance` - Visual cues indicating interactivity (e.g., "Increase button affordance with hover:scale-105 transition effects and an interactive shadow-sm hover:shadow-md")
+9. `Interaction parity` - Consistent behavior across devices (e.g., "Ensure interaction parity by making hover:bg-slate-100 states have equivalent focus-visible:bg-slate-100 and active:bg-slate-200 states for keyboard/touch users")
+
+// Information & Interaction Design
+10. `Information architecture` - Structured content organization (e.g., "Improve the dashboard's information architecture by using a grid-cols-12 layout with col-span-8 for primary content and col-span-4 for secondary information")
+11. `Progressive disclosure` - Revealing information gradually (e.g., "Implement progressive disclosure for advanced settings using a Disclosure component from shadcn with a chevron animation on toggle")
+12. `Micro interactions` - State-based animations providing feedback (e.g., "Add micro interactions using group-hover:translate-x-1 transition-all duration-200 to the chevron icon in the dropdown menu")
+
+// Cognitive UX Principles
+13. `Cognitive load` - Mental effort required for interface use (e.g., "Reduce cognitive load in checkout by limiting form fields to max 4 per step and using shadcn/Form with built-in validation")
+14. `Decision fatigue` - Limited user decision capacity (e.g., "Combat decision fatigue by using a bg-primary highlight for the recommended plan and limiting feature comparison to only 5 key differences")
 
 ## Tailwind Words
 
 ---
 
-Leveraging Tailwind-specific terminology in your prompts signals technical knowledge and produces more accurate results. Here are 10 powerful Tailwind terms:
+Leveraging Tailwind-specific terminology in your prompts signals technical knowledge and produces more accurate results. Here are 14 powerful Tailwind terms:
 
-1. `Utility-first` - Core Tailwind philosophy (e.g., "create a utility-first navbar design")
-2. `JIT compiler` - Just-in-time compilation (e.g., "leverage JIT compiler features for the animation effects")
-3. `Responsive variants` - Breakpoint-specific classes (e.g., "use responsive variants for the sidebar: hidden on mobile, visible on md:")
-4. `Container queries` - Layout based on parent size (e.g., "implement container queries for the product cards")
-5. `Space-between` - Flexbox spacing (e.g., "use space-between for the navigation items")
-6. `Arbitrary values` - Custom sizing with square brackets (e.g., "use arbitrary values [w-42rem] for the hero section")
-7. `Custom colour palette` - Extended theme colours (e.g., "use slate-800 for text and emerald-500 for accents")
-8. `Dark mode` - Theme toggle functionality (e.g., "implement dark mode toggle with appropriate colour shifts")
-9. `Group-hover` - Parent-child interaction states (e.g., "apply group-hover effects to the card's action buttons")
-10. `Ring utilities` - Focus state styling (e.g., "add ring utilities for interactive elements")
+// Core Tailwind Concepts
+1. `Utility-first` - Core Tailwind approach using atomic classes (e.g., "Create a utility-first navbar with flex justify-between items-center py-4 px-6 bg-white shadow-sm")
+2. `JIT compiler` - Just-in-time dynamic class generation (e.g., "Leverage dynamic classes enabled by the JIT compiler like hover:translate-y-[2px] and bg-[#3b82f680]")
+3. `Arbitrary values` - Custom non-standard measurements (e.g., "Apply precise spacing with arbitrary values like pt-[72px] w-[37.5rem] and grid-cols-[1fr_2.5fr_1fr]")
+4. `Custom colour palette` - Extended theme colors (e.g., "Apply our brand palette using custom colors text-brand-900 bg-brand-100 border-brand-300 where brand-900 is #0f172a")
+
+// Layout & Responsiveness
+5. `Responsive variants` - Breakpoint-specific styling (e.g., "Use responsive variants: flex-col items-start gap-4 on mobile, sm:flex-row sm:items-center sm:gap-6 on tablet, and md:justify-between on desktop")
+6. `Container queries` - Component-specific responsive styling (e.g., "@container queries for a product card that's w-full @container(min-width: 300px):grid @container(min-width: 400px):grid-cols-2")
+7. `Space-between` - Flexbox distribution (e.g., "Use flex justify-between items-center for the header with mr-auto on the logo and gap-4 between navigation items")
+8. `Responsive typography` - Screen-adaptive text sizing (e.g., "Use text-xl lg:text-2xl xl:text-4xl font-bold for the hero heading and text-sm md:text-base text-gray-600 for the description")
+9. `Spacing scale consistency` - Harmonious proportional spacing (e.g., "Maintain spacing consistency using p-4 gap-2 for small components, p-6 gap-4 for medium components, and p-8 gap-6 for large components")
+
+// Interactive States
+10. `Dark mode` - Light/dark theming (e.g., "Implement dark mode with bg-white dark:bg-slate-900 text-slate-900 dark:text-white and transition-colors duration-200")
+11. `Group-hover` - Parent-trigger state changes (e.g., "Create card with group hover effects: group hover:bg-slate-50 applied to the card and invisible group-hover:visible group-hover:opacity-100 on child buttons")
+12. `Ring utilities` - Focus state visualization (e.g., "Add accessible focus states with ring-2 ring-offset-2 ring-blue-500 focus:outline-none focus-visible:ring on interactive elements")
+13. `Multi-variant states` - Combined interactive states (e.g., "Apply hover:bg-blue-600 active:bg-blue-700 focus:ring-2 disabled:opacity-50 disabled:bg-gray-300 disabled:cursor-not-allowed to the submit button")
+14. `Pseudo-element styling` - Using before/after elements (e.g., "Add decorative elements with before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-gradient-to-r before:from-blue-500 before:to-purple-500")
 
 ## Shadcn Words
 

@@ -78,16 +78,16 @@ This example combines realistic data requests with specific Tailwind sizing inst
 
 When prompting AI tools like v0.dev, using professional UIUX terminology can dramatically improve results. Here are 10 powerful words that communicate design intent clearly:
 
-1. `Affordance` - Indicates how obvious an element's function should be (e.g., "make the button have stronger affordance")
-2. `Visual hierarchy` - Directs attention flow and importance (e.g., "establish a clearer visual hierarchy with the pricing tiers")
-3. `Microinteractions` - Small animations that provide feedback (e.g., "add microinteractions to form submissions")
-4. `Negative space` - Strategic emptiness that improves composition (e.g., "increase negative space around card elements")
-5. `Progressive disclosure` - Revealing information gradually (e.g., "use progressive disclosure for the complex settings")
-6. `Cognitive load` - Mental effort required to use an interface (e.g., "reduce cognitive load in the checkout process")
+1. `Visual hierarchy` - Directs attention flow and importance (e.g., "establish a clearer visual hierarchy with the pricing tiers")
+2. `Negative space` - Strategic emptiness that improves composition (e.g., "increase negative space around card elements")
+3. `Skeuomorphism vs. flat design` - Design philosophy spectrum (e.g., "add subtle skeuomorphic elements to the flat design")
+4. `Accessibility contrast` - WCAG compliant visibility (e.g., "ensure AAA accessibility contrast for all text elements")
+5. `Affordance` - Indicates how obvious an element's function should be (e.g., "make the button have stronger affordance")
+6. `Micro interactions` - Small animations that provide feedback (e.g., "add micro interactions to form submissions")
 7. `Information architecture` - Organization structure of content (e.g., "improve the information architecture of the dashboard")
-8. `Skeuomorphism vs. flat design` - Design philosophy spectrum (e.g., "add subtle skeuomorphic elements to the flat design")
-9. `Decision fatigue` - Limited user decision-making capacity (e.g., "minimize decision fatigue in the onboarding flow")
-10. `Accessibility contrast` - WCAG compliant visibility (e.g., "ensure AAA accessibility contrast for all text elements")
+8. `Progressive disclosure` - Revealing information gradually (e.g., "use progressive disclosure for the complex settings")
+9. `Cognitive load` - Mental effort required to use an interface (e.g., "reduce cognitive load in the checkout process")
+10. `Decision fatigue` - Limited user decision-making capacity (e.g., "minimize decision fatigue in the onboarding flow")
 
 ## Tailwind Words
 
@@ -96,15 +96,15 @@ When prompting AI tools like v0.dev, using professional UIUX terminology can dra
 Leveraging Tailwind-specific terminology in your prompts signals technical knowledge and produces more accurate results. Here are 10 powerful Tailwind terms:
 
 1. `Utility-first` - Core Tailwind philosophy (e.g., "create a utility-first navbar design")
-2. `Responsive variants` - Breakpoint-specific classes (e.g., "use responsive variants for the sidebar: hidden on mobile, visible on md:")
-3. `Custom colour palette` - Extended theme colours (e.g., "use slate-800 for text and emerald-500 for accents")
+2. `JIT compiler` - Just-in-time compilation (e.g., "leverage JIT compiler features for the animation effects")
+3. `Responsive variants` - Breakpoint-specific classes (e.g., "use responsive variants for the sidebar: hidden on mobile, visible on md:")
 4. `Container queries` - Layout based on parent size (e.g., "implement container queries for the product cards")
-5. `Arbitrary values` - Custom sizing with square brackets (e.g., "use arbitrary values [w-42rem] for the hero section")
-6. `Dark mode` - Theme toggle functionality (e.g., "implement dark mode toggle with appropriate colour shifts")
-7. `JIT compiler` - Just-in-time compilation (e.g., "leverage JIT compiler features for the animation effects")
-8. `Group-hover` - Parent-child interaction states (e.g., "apply group-hover effects to the card's action buttons")
-9. `Ring utilities` - Focus state styling (e.g., "add ring utilities for interactive elements")
-10. `Space-between` - Flexbox spacing (e.g., "use space-between for the navigation items")
+5. `Space-between` - Flexbox spacing (e.g., "use space-between for the navigation items")
+6. `Arbitrary values` - Custom sizing with square brackets (e.g., "use arbitrary values [w-42rem] for the hero section")
+7. `Custom colour palette` - Extended theme colours (e.g., "use slate-800 for text and emerald-500 for accents")
+8. `Dark mode` - Theme toggle functionality (e.g., "implement dark mode toggle with appropriate colour shifts")
+9. `Group-hover` - Parent-child interaction states (e.g., "apply group-hover effects to the card's action buttons")
+10. `Ring utilities` - Focus state styling (e.g., "add ring utilities for interactive elements")
 
 ## Shadcn Words
 
@@ -112,16 +112,16 @@ Leveraging Tailwind-specific terminology in your prompts signals technical knowl
 
 For interfaces using shadcn components, these 10 terms communicate component implementation expertise:
 
-1. `Compound components` - Related elements that work together (e.g., "use compound components for the date picker")
-2. `Polymorphic components` - Adaptable base elements (e.g., "make the button a polymorphic component")
-3. `Collapsible sections` - Toggle visibility areas (e.g., "implement collapsible sections for the FAQ items")
+1. `Radix primitives` - Accessibility-focused foundation (e.g., "build upon Radix primitives for maximum compatibility")
+2. `Compound components` - Related elements that work together (e.g., "use compound components for the date picker")
+3. `Polymorphic components` - Adaptable base elements (e.g., "make the button a polymorphic component")
 4. `Command palette` - Keyboard-navigable menu (e.g., "add a command palette for quick actions")
-5. `Toast notifications` - Temporary feedback messages (e.g., "show toast notifications for form submissions")
-6. `Dialogue modals` - Focus-trapping overlays (e.g., "use a dialogue modal for the confirmation step")
+5. `Drawer navigation` - Side-sliding panel (e.g., "add drawer navigation for mobile users")
+6. `Context menu` - Right-click action menu (e.g., "implement a context menu for additional options")
 7. `Accordion pattern` - Expandable content sections (e.g., "organize content in an accordion pattern")
-8. `Context menu` - Right-click action menu (e.g., "implement a context menu for additional options")
-9. `Drawer navigation` - Side-sliding panel (e.g., "add drawer navigation for mobile users")
-10. `Radix primitives` - Accessibility-focused foundation (e.g., "build upon Radix primitives for maximum compatibility")
+8. `Collapsible sections` - Toggle visibility areas (e.g., "implement collapsible sections for the FAQ items")
+9. `Toast notifications` - Temporary feedback messages (e.g., "show toast notifications for form submissions")
+10. `Dialogue modals` - Focus-trapping overlays (e.g., "use a dialogue modal for the confirmation step")
 
 ## More Prompt Examples
 

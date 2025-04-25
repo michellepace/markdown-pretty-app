@@ -79,6 +79,7 @@ This example combines realistic data requests with specific Tailwind sizing inst
 When prompting AI tools like v0.dev, using professional UIUX terminology can dramatically improve results. Here are 14 powerful words that communicate design intent clearly:
 
 ### Visual Design Principles
+
 1. `Visual hierarchy` - Directs attention flow through deliberate sizing, contrast, and positioning (e.g., "Make the pricing tier cards use a z-20 shadow for the recommended option and z-10 for others to establish clearer visual hierarchy")
 2. `Content hierarchy` - Information importance signaling (e.g., "Create clear content hierarchy with text-2xl font-semibold for primary headings, text-lg font-medium for subheadings, and text-sm text-gray-600 for supporting text")
 3. `Negative space` - Strategic whitespace that improves focus and readability (e.g., "Add p-6 negative space around cards and increase to p-8 for the featured card")
@@ -139,27 +140,32 @@ Leveraging Tailwind-specific terminology in your prompts signals technical knowl
 For interfaces using shadcn components, these 14 terms communicate component implementation expertise:
 
 ### Core Component Architecture
+
 1. `Radix primitives` - Accessibility-first unstyled components that shadcn builds upon (e.g., "Implement a Select component using Radix primitives with proper aria-label attributes and keyboard navigation support with a max-h-[300px] scrollable dropdown")
 2. `Compound components` - Related component pieces that share state (e.g., "Create a Form compound component with FormField, FormItem, FormLabel, FormControl, FormDescription, and FormMessage subcomponents that handle validation state together")
 3. `Polymorphic components` - Components that can render as different HTML elements (e.g., "Make the Button component polymorphic using the asChild prop so it can wrap a NextLink component while maintaining all button styling")
 
 ### Navigation & Command Interfaces
+
 4. `Command palette` - Keyboard-accessible search interface (e.g., "Add a Command palette with cmdk integration that filters through page sections and supports both keyboard shortcuts (⌘K) and click activation")
 5. `Drawer navigation` - Side-sliding panel UI pattern (e.g., "Create a Drawer navigation using shadcn that slides from the left on small screens with a backdrop blur-sm effect and preserves scroll position when closed") 
 6. `Sheet component` - Side panel with various anchor positions (e.g., "Create a Sheet component that slides in from the right side with size='sm' on mobile and 'default' on desktop, containing user notification preferences")
 
 ### Content Organization Components
+
 7. `Accordion pattern` - Expandable content sections (e.g., "Use an Accordion with collapsible={false} type='single' to ensure one section always remains open, and customize the ChevronDown icon animation duration to 150ms")
 8. `Collapsible sections` - Toggle visibility content areas (e.g., "Build FAQ items using Collapsible components with a custom CollapseButton that includes both a plus/minus icon transition and text color change on expanded state")
 9. `Tabs with content` - Organized sectioned interface (e.g., "Build a TabsList with defaultValue='overview' and three Tab panels using underlined variant that dynamically swaps content without page reload")
 
 ### Interactive Overlay Components
+
 10. `Context menu` - Right-click action interface (e.g., "Implement a Context menu with submenus for file actions that includes icons from lucide-react and keyboard shortcuts displayed right-aligned in text-muted-foreground")
 11. `Dialogue modals` - Focus-trapping overlay components (e.g., "Use a Dialogue modal with a 3-step onboarding flow that uses Dialogue.Title with text-2xl and Dialogue.Description with text-muted, ensuring each step has a clear primary action button")
 12. `Toast notifications` - Temporary feedback messages (e.g., "Show Toast notifications using useToast() hook with variant='destructive' for errors and duration={3000} for success messages, positioned in the bottom-right corner")
 13. `Hover Card` - Rich preview popover for elements (e.g., "Add HoverCard components to user avatars showing detailed profile info with a 300ms openDelay and a subtle shadow-md border rounded-xl")
 
 ### Advanced Selection Components
+
 14. `Combobox with filtering` - Searchable dropdown selection (e.g., "Implement a Combobox component that filters countries as you type with support for keyboard navigation and custom rendering of flag icons next to each option")
 
 ## More Prompt Examples

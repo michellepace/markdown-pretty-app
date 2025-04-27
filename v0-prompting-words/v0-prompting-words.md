@@ -78,12 +78,6 @@ This example combines realistic data requests with specific Tailwind sizing inst
 
 When prompting AI tools like v0.dev, using professional UIUX terminology can dramatically improve results. Here are 14 powerful words that communicate design intent clearly:
 
-## UIUX Designer Words
-
----
-
-When prompting AI tools like v0.dev, using professional UIUX terminology can dramatically improve results. Here are 14 powerful words that communicate design intent clearly:
-
 ### Visual Design Principles
 
 `1)Visual hierarchy`: Directs attention flow through deliberate sizing, contrast, and positioning

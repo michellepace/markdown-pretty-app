@@ -1,6 +1,7 @@
 # Powerful Prompting Words for v0.dev
 
 ## Table of Contents
+- [About And Why](#about-and-why)
 - [Words from v0 Interview Transcript](#words-from-v0-interview-transcript)
   - [Design Specification Terms](#design-specification-terms)
   - [Layout Instructions](#layout-instructions)
@@ -27,13 +28,23 @@
 
 ⌘
 
+## About and Why
+
+---
+
+A "work in progress" resource of powerful prompting words for v0.dev. The goal is to compile a list of words that LLMs (AI agents) already have extensive context about to get better results, faster. It aims to be helpful if you lack vocabulary - whether you don't have the language of a designer or aren't a frontend developer familiar with Tailwind and shadcn/ui components. A work in progress, not all words have been tested.
+
+Why powerful words matter:
+1. **Eliminates ambiguity**: Technical terms have specific, universally understood meanings in their domain
+2. **Provides implementation guidance**: Technical terms often map directly to code implementation patterns
+3. **Increases precision**: Specific terminology gives you finer control over visual details and component behavior
+4. **Reduces iterations**: Precise language gets you closer to your vision in fewer attempts
+
 ## Words from v0 Interview Transcript
 
 ---
 
-The YouTube interview with v0.dev's VP of Product showcases several categories of powerful prompting terminology that dramatically enhance v0.dev outputs. These expert phrases demonstrate technical precision, design sensibility, and clear vision—essential qualities for getting AI tools to generate exactly what you want. 
-
-The original interview: https://youtu.be/sCFS_U7d9Do
+Collected from a YouTube interview with v0.dev's VP of Product. The original interview: https://youtu.be/sCFS_U7d9Do
 
 ### Design Specification Terms
 - `Warmer grays` - Specifying colour temperature shows design awareness and produces more aesthetically pleasing results

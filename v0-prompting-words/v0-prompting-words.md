@@ -95,7 +95,7 @@ This example combines realistic data requests with specific Tailwind sizing inst
 
 ---
 
-UIUX terminology can dramatically improve results. Here are 14 powerful words that communicate design intent clearly:
+(Generated and still need validation):
 
 ### Visual Design Principles
 
@@ -207,7 +207,7 @@ UIUX terminology can dramatically improve results. Here are 14 powerful words th
 
 ---
 
-Using Tailwind-specific terminology in  prompts often produces more accurate results. Here are 14 powerful Tailwind terms:
+(Generated and still need validation):
 
 ### Core Tailwind Concepts
 
@@ -317,7 +317,7 @@ Using Tailwind-specific terminology in  prompts often produces more accurate res
 
 ---
 
-For interfaces using shadcn components, these 14 terms communicate component implementation expertise:
+(Generated and still need validation):
 
 ### Core Component Architecture
 

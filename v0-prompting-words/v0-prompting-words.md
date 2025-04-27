@@ -34,7 +34,7 @@
 
 A collection of prompting words for v0.dev. Useful if you lack the vocabulary of a designer, or the words a frontend developer adept in Tailwind and Shadcn has. Includes examples.
 
-Words are still under test and refinement. The ones from the inyerview directly below are the most "vaidated."
+Words are still under test and refinement. The ones from the interview worked.
 
 ## Words from v0 Interview Transcript
 

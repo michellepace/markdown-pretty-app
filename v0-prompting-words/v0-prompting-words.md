@@ -1,7 +1,7 @@
 # Powerful Prompting Words for v0.dev
 
 ## Table of Contents
-- [About And Why](#about-and-why)
+- [About](#about)
 - [Words from v0 Interview Transcript](#words-from-v0-interview-transcript)
   - [Design Specification Terms](#design-specification-terms)
   - [Layout Instructions](#layout-instructions)
@@ -28,23 +28,19 @@
 
 ⌘
 
-## About and Why
+## About
 
 ---
 
-A "work in progress" resource of powerful prompting words for v0.dev. The goal is to compile a list of words that LLMs (AI agents) already have extensive context about to get better results, faster. It aims to be helpful if you lack vocabulary - whether you don't have the language of a designer or aren't a frontend developer familiar with Tailwind and shadcn/ui components. A work in progress, not all words have been tested.
+A collection of prompting words for v0.dev. Useful if you lack the vocabulary of a designer, or the words a frontend developer adept in Tailwind and Shadcn has. Includes examples.
 
-Why powerful words matter:
-1. **Eliminates ambiguity**: Technical terms have specific, universally understood meanings in their domain
-2. **Provides implementation guidance**: Technical terms often map directly to code implementation patterns
-3. **Increases precision**: Specific terminology gives you finer control over visual details and component behavior
-4. **Reduces iterations**: Precise language gets you closer to your vision in fewer attempts
+Words are still under test and refinement.
 
 ## Words from v0 Interview Transcript
 
 ---
 
-Collected from a YouTube interview with v0.dev's VP of Product. The original interview: https://youtu.be/sCFS_U7d9Do
+Collected from a YouTube interview with v0.dev's VP of Product whilst building a prototype out. The original interview: https://youtu.be/sCFS_U7d9Do
 
 ### Design Specification Terms
 - `Warmer grays` - Specifying colour temperature shows design awareness and produces more aesthetically pleasing results
@@ -99,7 +95,7 @@ This example combines realistic data requests with specific Tailwind sizing inst
 
 ---
 
-When prompting AI tools like v0.dev, using professional UIUX terminology can dramatically improve results. Here are 14 powerful words that communicate design intent clearly:
+UIUX terminology can dramatically improve results. Here are 14 powerful words that communicate design intent clearly:
 
 ### Visual Design Principles
 
@@ -206,11 +202,12 @@ When prompting AI tools like v0.dev, using professional UIUX terminology can dra
 2. *Combat decision fatigue by using a bg-primary highlight for the recommended plan and limiting feature comparison to only 5 key differences*
 
 > The improved version specifies styling approaches and numerical constraints that create immediately actionable instructions for v0.dev.
+
 ## Tailwind Words
 
 ---
 
-Leveraging Tailwind-specific terminology in your prompts signals technical knowledge and produces more accurate results. Here are 14 powerful Tailwind terms:
+Using Tailwind-specific terminology in  prompts often produces more accurate results. Here are 14 powerful Tailwind terms:
 
 ### Core Tailwind Concepts
 

@@ -2,7 +2,7 @@
 
 A collection of prompting words for applications built with **shadcn/ui**, styled and themed with **Tailwind CSS**. Useful if you lack the vocabulary of a designer, or the words a frontend developer adept in Tailwind and shadcn/ui has. Includes prompt examples.
 
-**Note 1 — Work in progress.** Words in section "[Words from v0 Interview Transcript](#words-from-v0-interview-transcript)" work, the remaining still to be validated.
+**Note — Work in progress.** Words in section "[Words from v0 Interview Transcript](#words-from-v0-interview-transcript)" work, remaining still to be validated.
 
 References:
 - [https://v0.dev](https://v0.dev/)

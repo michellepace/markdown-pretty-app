@@ -2,15 +2,13 @@
 
 A collection of prompting words for applications built with **shadcn/ui**, styled and themed with **Tailwind CSS**. Useful if you lack the vocabulary of a designer, or the words a frontend developer adept in Tailwind and shadcn/ui has. Includes prompt examples.
 
-**Note 1 — This is a work in progress.** The words in section "[Words from v0 Interview Transcript](#words-from-v0-interview-transcript)" were used by v0's VP of Product. They work. The rest I generated with Claude, not all tried and tested yet.
-
-**Note 2 — More Words.** A fantastic collection of design words I would like to incorporate into this document, soon: [https://www.contrast.studio/design-terms-explained](https://www.contrast.studio/design-terms-explained)
+**Note 1 — Work in progress.** Words in section "[Words from v0 Interview Transcript](#words-from-v0-interview-transcript)" work, the remaining still to be validated.
 
 References:
 - [https://v0.dev](https://v0.dev/)
 - [https://ui.shadcn.com](https://ui.shadcn.com/)
 - [https://tailwindcss.com](https://tailwindcss.com/)
-- Chat with Repo Docs: [shandcn/uI](https://deepwiki.com/shadcn-ui/ui) and [Tailwind CSS](https://deepwiki.com/tailwindlabs/tailwindcss)
+- [Design Terms Explained](https://www.contrast.studio/design-terms-explained)
 
 ---
 

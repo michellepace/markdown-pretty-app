@@ -1,7 +1,20 @@
 # Powerful Prompting Words for v0.dev
 
+A collection of prompting words for applications built with **shadcn/ui**, styled and themed with **Tailwind CSS**. Useful if you lack the vocabulary of a designer, or the words a frontend developer adept in Tailwind and shadcn/ui has. Includes prompt examples.
+
+**Note 1 — This is a work in progress.** The words in section "[Words from v0 Interview Transcript](#words-from-v0-interview-transcript)" were used by v0's VP of Product. They work. The rest I generated with Claude, not all tried and tested yet.
+
+**Note 2 — More Words.** A fantastic collection of design words I would like to incorporate into this document, soon: [https://www.contrast.studio/design-terms-explained](https://www.contrast.studio/design-terms-explained)
+
+References:
+- [https://v0.dev](https://v0.dev/)
+- [https://ui.shadcn.com](https://ui.shadcn.com/)
+- [https://tailwindcss.com](https://tailwindcss.com/)
+- Chat with Repo Docs: [shandcn/uI](https://deepwiki.com/shadcn-ui/ui) and [Tailwind CSS](https://deepwiki.com/tailwindlabs/tailwindcss)
+
+---
+
 ## Table of Contents
-- [About](#about)
 - [Words from v0 Interview Transcript](#words-from-v0-interview-transcript)
   - [Design Specification Terms](#design-specification-terms)
   - [Layout Instructions](#layout-instructions)
@@ -28,19 +41,11 @@
 
 ⌘
 
-## About
-
----
-
-A collection of prompting words for v0.dev. Useful if you lack the vocabulary of a designer, or the words a frontend developer adept in Tailwind and Shadcn has. Includes examples.
-
-Words are still under test and refinement. The ones from the interview worked.
-
 ## Words from v0 Interview Transcript
 
 ---
 
-Collected from a YouTube interview with v0.dev's VP of Product whilst building a prototype out. The original interview: https://youtu.be/sCFS_U7d9Do
+Collected from a YouTube interview with v0.dev's VP of Product whilst building a prototype out. The original interview https://youtu.be/sCFS_U7d9Do and [summarised transcripted](./v0-interview-transcript.md)
 
 ### Design Specification Terms
 1. `Warmer grays` - Specifying colour temperature shows design awareness and produces more aesthetically pleasing results

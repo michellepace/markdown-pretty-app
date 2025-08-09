@@ -125,6 +125,7 @@ block-beta
     PARSER --> CHAPTERLIST
     CHAPTERLIST --> XMLBUILDER
     XMLBUILDER --> XMLOUTPUT
-    style CLI color:#fff,fill:#8ec9ff,stroke:#46637e,stroke-dasharray: 5 5
-    style XMLOUTPUT color:#fff,fill:#90cc9b,stroke:#354c39,stroke-dasharray: 5 5
+
+    style CLI color:#fff,fill:#3874ac,stroke:#000,stroke-dasharray: 5 5
+    style XMLOUTPUT color:#fff,fill:#419f52,stroke:#000,stroke-dasharray: 5 5
 ```

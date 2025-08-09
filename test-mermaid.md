@@ -77,9 +77,9 @@ flowchart TD
     changes in PR`"]
     REVIEW --> APPROVE["`Approve & merge PR
     GitHub:
-    a)Merge commit (visual⭐)
-    b)Rebase merge (clean✅)
-    c)Squash merge (v. sparse)`"]
+    a)Merge commit →⭐visual
+    b)Rebase merge →✅clean
+    c)Squash merge →v.sparse`"]
     APPROVE --> SYNC["`**Sync local main**
     git checkout main
     git pull origin main`"]

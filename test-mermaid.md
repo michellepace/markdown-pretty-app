@@ -62,7 +62,7 @@ config:
 flowchart TD
     START(["`**Start on main**
     git checkout main
-    git pull origin main`"]) --> CREATE["`Create branch
+    git pull origin main`"]) --> CREATE["`**Create branch**
     git checkout -b my-branch`"]
     CREATE --> WORK["`**Do commits**
     git add .
@@ -86,7 +86,6 @@ flowchart TD
     SYNC --> CLEANUP["`**Delete branch**
     git branch -d my-branch
     git push origin --delete my-branch`"]
-    CLEANUP --> NEXT["`**Ready for next branch**
-    Create new branch`"]
+    CLEANUP --> NEXT["`**Ready for next branch**`"]
     NEXT -.-> |Create next branch| CREATE
 ```

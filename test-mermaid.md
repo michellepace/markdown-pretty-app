@@ -83,8 +83,8 @@ flowchart TD
     APPROVE --> SYNC["`**Sync local main**
     git checkout main
     git pull origin main`"]
-    SYNC --> CLEANUP["`**Delete branch**
-    git branch -d my-branch
+    SYNC --> CLEANUP["`**Delete branch (2 steps)**
+    git branch --delete my-branch
     git push origin --delete my-branch`"]
     CLEANUP --> NEXT["`**Ready for next branch**`"]
     NEXT -.-> |Create next branch| CREATE

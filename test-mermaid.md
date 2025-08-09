@@ -75,8 +75,8 @@ flowchart TD
     PR --> REVIEW["`**Code review**
     GitHub: Review
     changes in PR`"]
-    REVIEW --> APPROVE["`Approve & merge PR
-    GitHub:
+    REVIEW --> APPROVE["`**Approve & merge PR**
+    *GitHub Choices:*
     a)Merge commit →⭐visual
     b)Rebase merge →✅clean
     c)Squash merge →v.sparse`"]

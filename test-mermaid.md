@@ -52,7 +52,7 @@ block-beta
 
 ```mermaid
 ---
-title: Git Feature Branch Workflow
+title: Git Branch Workflow
 config:
   look: neo
   layout: dagre

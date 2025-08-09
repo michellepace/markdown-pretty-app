@@ -109,3 +109,22 @@ block-beta
     style CLI stroke-dasharray: 5 5
     style OUTPUT stroke-dasharray: 5 5
 ```
+
+```mermaid
+---
+config:
+  theme: neo-dark
+---
+block-beta
+    columns 5
+    CLI["User Command:\n`youtube-to-xml\nfile.txt`"] space FILEREADER["File Reader\n(file_io.py)"] space PARSER["Parser\n(parser.py)"]
+    space space space space space
+    XMLOUTPUT["XML Output\ntranscript_files/\nfile.xml"] space XMLBUILDER["XML Builder\n(xml_builder.py)"] space CHAPTERLIST["Chapter List\n[Chapter(...)]"]
+    CLI --> FILEREADER
+    FILEREADER --> PARSER
+    PARSER --> CHAPTERLIST
+    CHAPTERLIST --> XMLBUILDER
+    XMLBUILDER --> XMLOUTPUT
+    style CLI color:#fff,fill:#8ec9ff,stroke:#46637e,stroke-dasharray: 5 5
+    style XMLOUTPUT color:#fff,fill:#90cc9b,stroke:#354c39,stroke-dasharray: 5 5
+```

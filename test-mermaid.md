@@ -208,3 +208,54 @@ block-beta
     EXCEPTION --> CLIMOD
     EXCEPTION --> PARSER
 ```
+
+## Try 4
+
+```mermaid
+---
+config:
+  theme: neutral
+---
+block-beta
+    columns 5
+    CLI["CLI Input\nyoutube-to-xml\ntranscript.txt"] space CLIMOD["cli.py\n(orchestrate)\n(file I/O)"] space OUTPUT["transcript_files/\ntranscript.xml"]
+    space space space space space
+    space EXCEPTION["exceptions.py\n(parsing errors)"] space space space
+    space space space space space
+    space space PARSER["parser.py\n(validate format)\n(find chapters)"] space XMLBUILDER["xml_builder.py\n(generate XML)\n(handle escaping)"]
+
+    CLI --> CLIMOD
+    CLIMOD -- "Raw text<br>as string" --> PARSER
+    PARSER -- "List[Chapter]<br>(frozen dataclass)" --> XMLBUILDER
+    XMLBUILDER -- "XML string" --> CLIMOD
+    CLIMOD --> OUTPUT
+    EXCEPTION --> CLIMOD
+    EXCEPTION --> PARSER
+```
+
+## Try 5
+
+```mermaid
+---
+config:
+  theme: neutral
+---
+block-beta
+    columns 5
+    CLI["User Command\nyoutube-to-xml\ntranscript.txt"] space CLIMOD["cli.py\n(orchestrate)\n(parse args)\n(file I/O)\n(error handling)"] space OUTPUT["transcript_files/\n└── transcript.xml\n(output file)"]
+    space space space space space
+    space EXCEPTION["exceptions.py\n(EmptyFileError)\n(InvalidTranscriptFormatError)\n(MissingTimestampError)"] space space space
+    space space space space space
+    space space PARSER["parser.py\n(validate format)\n(find chapters)\n(extract content)"] space XMLBUILDER["xml_builder.py\n(generate XML)\n(handle escaping)"]
+
+    CLI --> CLIMOD
+    CLIMOD -- "Raw text<br>as string" --> PARSER
+    PARSER -- "List[Chapter]<br>(frozen dataclass)" --> XMLBUILDER
+    XMLBUILDER -- "XML string" --> CLIMOD
+    CLIMOD --> OUTPUT
+    EXCEPTION --> CLIMOD
+    EXCEPTION --> PARSER
+
+    style CLI color:#fff,fill:#3874ac
+    style OUTPUT color:#fff,fill:#419f52
+```

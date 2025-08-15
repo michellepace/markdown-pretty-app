@@ -233,12 +233,39 @@ block-beta
     EXCEPTION --> PARSER
 ```
 
-## Try 5 I'm getting tired for trying
+## Try 5 I'm getting tired for trying - neutral
 
 ```mermaid
 ---
 config:
   theme: neutral
+---
+block-beta
+    columns 5
+    CLI["User Command\nwith raw transcript\n--\nyoutube-to-xml\ntranscript.txt"] space CLIMOD["cli.py\n---\norchestrate\nparse args\nfile I/O\nerror display"] space OUTPUT["Output File\n---\ntranscript_files/\n└── transcript.xml"]
+    space space space space space
+    space EXCEPTION["exceptions.py\n---\nEmptyFileError\nInvalidTranscriptFormatError\nMissingTimestampError"] space space space
+    space space space space space
+    space space PARSER["parser.py\n---\nvalidate format\nfind chapters\nextract content"] space XMLBUILDER["xml_builder.py\n---\ngenerate XML\nhandle escaping"]
+
+    CLI --> CLIMOD
+    CLIMOD -- "Raw text<br>as string" --> PARSER
+    PARSER -- "List[Chapter]<br>(frozen dataclass)" --> XMLBUILDER
+    XMLBUILDER -- "XML string" --> CLIMOD
+    CLIMOD --> OUTPUT
+    EXCEPTION --> CLIMOD
+    EXCEPTION --> PARSER
+
+    style CLI color:#fff,fill:#3874ac
+    style OUTPUT color:#fff,fill:#419f52
+```
+
+## Try 5 I'm getting tired for trying - dark
+
+```mermaid
+---
+config:
+  theme: dark
 ---
 block-beta
     columns 5

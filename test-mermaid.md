@@ -185,3 +185,26 @@ flowchart TD
     style TOP fill:none,stroke:none
 ```
 
+## Try 3
+
+```mermaid
+---
+config:
+  theme: neutral
+---
+block-beta
+    columns 5
+    CLI["CLI Input\nyoutube-to-xml\ntranscript.txt"] space CLIMOD["cli.py\n(orchestrate)\n(file I/O)"] space OUTPUT["transcript_files/\ntranscript.xml"]
+    space space space space space
+    space EXCEPTION["exceptions.py\n(parsing errors)"] space space space
+    space space space space space
+    space space PARSER["parser.py\n(validate format)\n(find chapters)"] space XMLBUILDER["xml_builder.py\n(generate XML)\n(handle escaping)"]
+
+    CLI --> CLIMOD
+    CLIMOD --> PARSER
+    PARSER --> XMLBUILDER
+    XMLBUILDER --> CLIMOD
+    CLIMOD --> OUTPUT
+    EXCEPTION --> CLIMOD
+    EXCEPTION --> PARSER
+```

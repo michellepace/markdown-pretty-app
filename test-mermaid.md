@@ -89,3 +89,99 @@ flowchart TD
     CLEANUP --> NEXT["`**Ready for next branch**`"]
     NEXT -.-> |Create next branch| CREATE
 ```
+
+---
+
+## Try again 1
+
+```mermaid
+---
+config:
+  theme: redux
+  markdownAutoWrap: false
+---
+flowchart TD
+    CLI@{ shape: lean-r, label: "User Command\n\"youtube-to-xml transcript.txt\"" }
+    CLIMOD["`**cli.py**
+    • Parse args
+    • File I/O operations
+    • Error handling
+    • Orchestration`"]
+    EXCEPTIONS["`**exceptions.py**
+    • EmptyFileError
+    • InvalidTranscriptFormatError
+    • MissingTimestampError`"]
+    PARSER["`**parser.py**
+    • Validate format
+    • Find chapters
+    • Extract content`"]
+    XMLBUILDER["`**xml_builder.py**
+    • Generate XML
+    • Handle escaping`"]
+    OUTPUT["`**transcript_files/**
+    └── transcript.xml
+    (output file)`"]
+    CLI --> CLIMOD
+    CLIMOD --> |Raw text<br>as string| PARSER
+    PARSER --> |"List[Chapter]<br>(frozen dataclass)"| XMLBUILDER
+    XMLBUILDER --> |XML string| CLIMOD
+    CLIMOD --> OUTPUT
+    EXCEPTIONS -.-> PARSER
+    EXCEPTIONS -.-> CLIMOD
+
+    style CLI color:#fff,fill:#3874ac,stroke:#000,stroke-dasharray: 5 5
+    style OUTPUT color:#fff,fill:#419f52,stroke:#000,stroke-dasharray: 5 5
+    style EXCEPTIONS color:#fff,fill:#e74c3c,stroke:#000,stroke-dasharray: 3 3
+```
+
+## Try again 2
+
+```mermaid
+---
+config:
+  theme: redux
+---
+flowchart TD
+    subgraph TOP[" "]
+        direction LR
+        CLI["`**User Command**
+        youtube-to-xml
+        transcript.txt`"]
+        CLIMOD["`**cli.py**
+        • Parse args
+        • File I/O operations
+        • Error handling
+        • Orchestration`"]
+        OUTPUT["`**transcript_files/**
+        └── transcript.xml
+        (output file)`"]
+        CLI --> CLIMOD
+        CLIMOD --> OUTPUT
+    end
+    
+    EXCEPTIONS["`**exceptions.py**
+    • EmptyFileError
+    InvalidTranscriptFormatError
+    • MissingTimestampError`"]
+    
+    PARSER["`**parser.py**
+    • Validate format
+    • Find chapters
+    • Extract content`"]
+    
+    XMLBUILDER["`**xml_builder.py**
+    • Generate XML
+    • Handle escaping`"]
+    
+    CLIMOD --> |Raw text<br>as string| PARSER
+    PARSER --> |"List[Chapter]<br>(frozen dataclass)"| XMLBUILDER
+    XMLBUILDER --> |XML string| CLIMOD
+    EXCEPTIONS -.-> PARSER
+    EXCEPTIONS -.-> CLIMOD
+    
+    style CLI color:#fff,fill:#3874ac,stroke:#000,stroke-dasharray: 5 5
+    style OUTPUT color:#fff,fill:#419f52,stroke:#000,stroke-dasharray: 5 5
+    style EXCEPTIONS color:#fff,fill:#e74c3c,stroke:#000,stroke-dasharray: 3 3
+    style TOP fill:none,stroke:none
+```
+
